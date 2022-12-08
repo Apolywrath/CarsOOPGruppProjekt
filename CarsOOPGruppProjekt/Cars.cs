@@ -5,21 +5,29 @@ namespace CarsOOPGruppProjekt
 {
     public class Cars
     {
-        public int cars_id;
-        public string cars_model;
-        public string manufacturers_manufacturers_name;
-        public string cars_year;
-        public string retailers_retailers_name;
-        public int cars_price;
-        public Cars(int cars_id, string cars_model, string manufacturers_manufacturers_name, string cars_year
-            , string retailers_retailers_name, int cars_price)
+        public int id;
+        public string model;
+        public string manufacturer;
+        public string year;
+        public string retailer;
+        public int price;
+        //Constructors
+        public Cars(int id, string model, string manufacturer, string year
+            , string retailer, int price)
         {
-            this.cars_id = cars_id;
-            this.cars_model = cars_model;
-            this.manufacturers_manufacturers_name = manufacturers_manufacturers_name;
-            this.cars_year = cars_year;
-            this.retailers_retailers_name = retailers_retailers_name;
-            this.cars_price = cars_price;
+            this.id = id;
+            this.model = model;
+            this.manufacturer = manufacturer;
+            this.year = year;
+            this.retailer = retailer;
+            this.price = price;
         }
+        //Properties
+        public int Id { get { return id; } }
+        public string Model { get { return model; } }
+        public string Manufacturer { get { return manufacturer; } }
+        public string Retailer { get { return retailer; } }
+        public int Price { get { return price; } }
+        public string Year { get { return year; } }
     }
 }
