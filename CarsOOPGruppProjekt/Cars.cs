@@ -5,7 +5,6 @@ namespace CarsOOPGruppProjekt
 {
     public class Cars
     {
-
         public int cars_id;
         public string cars_model;
         public string manufacturers_manufacturers_name;
