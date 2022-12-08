@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 namespace CarsOOPGruppProjekt
@@ -70,12 +72,59 @@ namespace CarsOOPGruppProjekt
         }
 
         // Har en input query som försöker köras där man bara får tillbaka en int rowAffected hur många rader som påverkas
-        public void updateData(string query)
+        public void updateSqlData(string query)
         {
             _mysqlCon.Open();
             MySqlCommand cmd = new MySqlCommand(query,_mysqlCon);
             int rowAffected = cmd.ExecuteNonQuery();
+
             _mysqlCon.Close();
+        }
+
+        public List<Cars> searchUpdate(string keyWord, string comboString)
+        {
+            if(keyWord == "")
+            {
+                return getData();
+            }
+            string columName = columNameFixer(comboString);
+            string query = String.Format("SELECT * FROM CARS WHERE {0} LIKE @colValue", columName);
+            MySqlCommand cmd = new MySqlCommand(query, _mysqlCon);
+            cmd.Parameters.AddWithValue("@colValue", "%"+keyWord+"%");
+            _mysqlCon.Open();
+            MySqlDataReader reader = cmd.ExecuteReader();
+            //Skapar en temp List med classen Cars
+            List<Cars> sqlCarList = new List<Cars>();
+
+            // Läser varje rad tills det inte finns fler rader.
+            while (reader.Read())
+            {
+                // Lägger till i våran Lista sqlCarList med hjälp av namnen va det heter i databasen
+                sqlCarList.Add(new Cars(
+                    Convert.ToInt32(reader["cars_id"].ToString()),
+                    reader["cars_model"].ToString(),
+                    reader["manufacturers_manufacturers_name"].ToString(),
+                    reader["retailers_retailers_name"].ToString(),
+                    reader["cars_year"].ToString(),
+                    Convert.ToInt32(reader["cars_price"])));
+
+            }
+            _mysqlCon.Close();
+            return sqlCarList;
+        }
+        public string columNameFixer(string columName)
+        {
+            switch(columName)
+                {
+                case "Model":
+                    return "cars_model";
+                case "Year":
+                    return "cars_Year";
+                case "Price":
+                    return "cars_Price";
+            }
+
+            return null;
         }
 
 

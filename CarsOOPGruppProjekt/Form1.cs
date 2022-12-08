@@ -51,5 +51,21 @@ namespace CarsOOPGruppProjekt
                     car.Price + ":-");
             }
         }
+
+        private void searchtxtbox_TextChanged(object sender, EventArgs e)
+        {
+            List<Cars> cars = sqlConn.searchUpdate(searchtxtbox.Text,searchcmbBox.SelectedItem.ToString());
+
+            lbList.Items.Clear();
+            foreach (var car in cars)
+            {
+                lbList.Items.Add(
+                    car.Manufacturer + " " +
+                    car.Model + " " +
+                    car.Year + " " +
+                    car.Retailer + " " +
+                    car.Price + ":-");
+            }
+        }
     }
 }
