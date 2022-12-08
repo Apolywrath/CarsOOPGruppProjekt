@@ -12,6 +12,7 @@ namespace CarsOOPGruppProjekt
 {
     public partial class Form1 : Form
     {
+        sqlConnection sqlConn = new sqlConnection();
         public Form1()
         {
             InitializeComponent();
@@ -39,7 +40,16 @@ namespace CarsOOPGruppProjekt
 
         private void btnView_Click(object sender, EventArgs e)
         {
-
+            List<Cars> cars = sqlConn.getData();
+            foreach (var car in cars)
+            {
+                lbList.Items.Add(
+                    car.Manufacturer + " " +
+                    car.Model + " " +
+                    car.Year + " " +
+                    car.Retailer + " " +
+                    car.Price + ":-");
+            }
         }
     }
 }

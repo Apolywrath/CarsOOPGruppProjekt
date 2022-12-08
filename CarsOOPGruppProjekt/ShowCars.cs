@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Metadata.Ecma335;
+//using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,7 +9,7 @@ namespace CarsOOPGruppProjekt
 {
     internal class ShowCars
     {
-        private List<Cars> _carsList;
+       /* private List<Cars> _carsList;
 
         public ShowCars()
         {
@@ -35,6 +35,6 @@ namespace CarsOOPGruppProjekt
         {
             get { return _carsList; }
             set { _carsList = value; }
-        }
+        }*/
     }
 }

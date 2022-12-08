@@ -45,10 +45,19 @@ namespace CarsOOPGruppProjekt
             List<Cars> test = new List<Cars>();
             while(reader.Read())
             {
-                Cars volvo = new Cars(Int32.Parse(reader["cars_id"].ToString()), reader["cars_model"].ToString(), reader["manufacturers_manufacturers_name"].ToString(),
-                    reader["cars_year"].ToString() , reader["retailers_retailers_name"].ToString(), Int32.Parse(reader["cars_price"].ToString())
-                    );
-                test.Add(volvo);
+                /* Cars volvo = new Cars(Int32.Parse(reader["cars_id"].ToString()), reader["cars_model"].ToString(), reader["manufacturers_manufacturers_name"].ToString(),
+                     reader["cars_year"].ToString() , reader["retailers_retailers_name"].ToString(), Int32.Parse(reader["cars_price"].ToString())
+                     );
+                 test.Add(volvo); */
+
+                test.Add(new Cars(
+                    Convert.ToInt32(reader["cars_id"].ToString()),
+                    reader["cars_model"].ToString(),
+                    reader["manufacturers_manufacturers_name"].ToString(),
+                    reader["retailers_retailers_name"].ToString(),
+                    reader["cars_year"].ToString(),
+                    Convert.ToInt32(reader["cars_price"])));
+
             }
             _mysqlCon.Close();
             return test;
