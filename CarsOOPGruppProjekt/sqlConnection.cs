@@ -14,6 +14,7 @@ namespace CarsOOPGruppProjekt
 
         public sqlConnection()
         {
+            //Kör functionen mysqlCon som sedan deklareras _mysqlCon
             _mysqlCon = mysqlCon();
         }
         private MySql.Data.MySqlClient.MySqlConnection mysqlCon()
