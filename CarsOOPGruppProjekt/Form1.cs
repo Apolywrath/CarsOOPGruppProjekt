@@ -108,7 +108,7 @@ namespace CarsOOPGruppProjekt
                 DataGridViewRow dgvr = new DataGridViewRow();
                 //Fungerar lite som i ett excel dokument. Cell[0] = id som är gömd men kan användas av oss.
                 dgvr.CreateCells(dataGridView1);
-                dgvr.Cells[0].Value = car.id;
+                dgvr.Cells[0].Value = car.Id;
                 dgvr.Cells[1].Value = car.manufacturer;
                 dgvr.Cells[2].Value = car.Model;
                 dgvr.Cells[3].Value = car.Year;
@@ -127,5 +127,40 @@ namespace CarsOOPGruppProjekt
         {
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            Cars car = getSelectedDataGridViewCar();
+
+            cmbManufacurers.Text = car.Manufacturer;
+            txtModel.Text = car.Model;
+            txtYear.Text = car.Year;
+            cmbRetailers.Text = car.Retailer;
+            txtPrice.Text = car.Price.ToString();
+        }
     }
 }
+
+/*
+ * 
+ * private void Button8_Click(object sender,
+    System.EventArgs e)
+{
+    UpdateStars(dataGridView.Rows[4], "******************");
+}
+
+int ratingColumn = 3;
+
+private void UpdateStars(DataGridViewRow row, string stars)
+{
+
+    row.Cells[ratingColumn].Value = stars;
+
+    // Resize the column width to account for the new value.
+    row.DataGridView.AutoResizeColumn(ratingColumn, 
+        DataGridViewAutoSizeColumnMode.DisplayedCells);
+}
+ * 
+ * 
+ * 
+ * */
