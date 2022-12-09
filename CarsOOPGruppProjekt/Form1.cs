@@ -68,7 +68,9 @@ namespace CarsOOPGruppProjekt
             List<Cars> cars = sqlConn.getData();
             foreach (var car in cars)
             {
+                //int id, string model, string manufacturer, string year, string retailer, int price
                 lbList.Items.Add(
+                    car.Id + " " +
                     car.Manufacturer + " " +
                     car.Model + " " +
                     car.Year + " " +
