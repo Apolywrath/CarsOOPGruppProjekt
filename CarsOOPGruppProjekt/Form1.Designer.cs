@@ -200,6 +200,7 @@
             // 
             // cmbRetailers
             // 
+            this.cmbRetailers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRetailers.FormattingEnabled = true;
             this.cmbRetailers.Location = new System.Drawing.Point(122, 98);
             this.cmbRetailers.Name = "cmbRetailers";
@@ -208,6 +209,7 @@
             // 
             // cmbManufacurers
             // 
+            this.cmbManufacurers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbManufacurers.FormattingEnabled = true;
             this.cmbManufacurers.Location = new System.Drawing.Point(122, 19);
             this.cmbManufacurers.Name = "cmbManufacurers";
