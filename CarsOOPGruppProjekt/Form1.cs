@@ -55,9 +55,23 @@ namespace CarsOOPGruppProjekt
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            
             string id = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+            cmbManufacurers.SelectedItem = getSelectedDataGridViewCar().manufacturer;
         }
 
+        // Get current selected Row Data from dataGridView1 for easier handling.
+        private Cars getSelectedDataGridViewCar()
+        {
+            Cars car = new Cars(
+                Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()),
+                dataGridView1.SelectedRows[0].Cells[2].Value.ToString(),
+                dataGridView1.SelectedRows[0].Cells[1].Value.ToString(),
+                dataGridView1.SelectedRows[0].Cells[4].Value.ToString(),
+                dataGridView1.SelectedRows[0].Cells[3].Value.ToString(), 
+                Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[5].Value.ToString()));
+                return car;
+        }
         private void btnRemove_Click(object sender, EventArgs e)
         {
 

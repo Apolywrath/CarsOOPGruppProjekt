@@ -70,6 +70,7 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -94,7 +95,6 @@
             this.id.Name = "id";
             this.id.ReadOnly = true;
             this.id.Visible = false;
-            this.id.Width = 125;
             // 
             // Manufacturer
             // 
@@ -102,7 +102,6 @@
             this.Manufacturer.MinimumWidth = 6;
             this.Manufacturer.Name = "Manufacturer";
             this.Manufacturer.ReadOnly = true;
-            this.Manufacturer.Width = 125;
             // 
             // Model
             // 
@@ -110,7 +109,6 @@
             this.Model.MinimumWidth = 6;
             this.Model.Name = "Model";
             this.Model.ReadOnly = true;
-            this.Model.Width = 125;
             // 
             // Year
             // 
@@ -118,7 +116,6 @@
             this.Year.MinimumWidth = 6;
             this.Year.Name = "Year";
             this.Year.ReadOnly = true;
-            this.Year.Width = 125;
             // 
             // Retailers
             // 
@@ -126,7 +123,6 @@
             this.Retailers.MinimumWidth = 6;
             this.Retailers.Name = "Retailers";
             this.Retailers.ReadOnly = true;
-            this.Retailers.Width = 125;
             // 
             // Price
             // 
@@ -134,7 +130,6 @@
             this.Price.MinimumWidth = 6;
             this.Price.Name = "Price";
             this.Price.ReadOnly = true;
-            this.Price.Width = 125;
             // 
             // btnView
             // 
