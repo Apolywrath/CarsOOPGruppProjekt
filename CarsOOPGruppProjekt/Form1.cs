@@ -50,7 +50,15 @@ namespace CarsOOPGruppProjekt
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            string strModel = txtModel.Text;
+            string strName = cmbManufacurers.Text;
+            int intYear = Convert.ToInt32(txtYear.Text);
+            string strRetail = cmbRetailers.Text;
+            int intPrice = Convert.ToInt32(txtPrice.Text);
 
+            string strSql = $"CALL addCar('{strModel}','{strName}','{intYear}','{strRetail}','{intPrice}')";
+
+            sqlConn.AddCar(strSql);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -145,6 +153,11 @@ namespace CarsOOPGruppProjekt
                 //Inget händer!
             }
            
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
