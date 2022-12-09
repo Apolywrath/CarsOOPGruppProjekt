@@ -125,13 +125,27 @@ namespace CarsOOPGruppProjekt
             _mysqlCon.Open();
             MySqlDataReader reader = new MySqlCommand("SELECT * FROM MANUFACTURERS", _mysqlCon).ExecuteReader();
             
-
             while (reader.Read())
             {
                 manufacturers.Add(new Manufacturer(reader["Manufacturers_name"].ToString()));
             }
 
             return manufacturers;
+        }
+
+        public List<Retailer> GetRetailers()
+        {
+            //Lägger till återförsäljare i lista med återförsäljare och returnerar listan
+            List<Retailer> retailers = new List<Retailer>();
+            _mysqlCon.Open();
+            MySqlDataReader reader = new MySqlCommand("SELECT * FROM RETAILERS", _mysqlCon).ExecuteReader();
+
+            while (reader.Read())
+            {
+                retailers.Add(new Retailer(reader["Retailers_name"].ToString()));
+            }
+
+            return retailers;
         }
 
         public string columNameFixer(string columName)
