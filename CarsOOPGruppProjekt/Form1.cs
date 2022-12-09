@@ -66,30 +66,37 @@ namespace CarsOOPGruppProjekt
         private void btnView_Click(object sender, EventArgs e)
         {
             List<Cars> cars = sqlConn.getData();
+            dataGridView1.Rows.Clear();
             foreach (var car in cars)
             {
-                lbList.Items.Add(
-                    car.Manufacturer + " " +
-                    car.Model + " " +
-                    car.Year + " " +
-                    car.Retailer + " " +
-                    car.Price + ":-");
+                DataGridViewRow dgvr = new DataGridViewRow();
+                dgvr.CreateCells(dataGridView1);
+                dgvr.Cells[0].Value = car.id;
+                dgvr.Cells[1].Value = car.manufacturer;
+                dgvr.Cells[2].Value = car.Model;
+                dgvr.Cells[3].Value = car.Year;
+                dgvr.Cells[4].Value = car.Retailer;
+                dgvr.Cells[5].Value = car.Price;
+                dataGridView1.Rows.Add(dgvr);
             }
+            string id = dataGridView1.Rows[0].Cells[0].Value.ToString();
         }
 
         private void searchtxtbox_TextChanged(object sender, EventArgs e)
         {
             List<Cars> cars = sqlConn.searchUpdate(searchtxtbox.Text,searchcmbBox.SelectedItem.ToString());
-
-            lbList.Items.Clear();
+            dataGridView1.Rows.Clear();
             foreach (var car in cars)
             {
-                lbList.Items.Add(
-                    car.Manufacturer + " " +
-                    car.Model + " " +
-                    car.Year + " " +
-                    car.Retailer + " " +
-                    car.Price + ":-");
+                DataGridViewRow dgvr = new DataGridViewRow();
+                dgvr.CreateCells(dataGridView1);
+                dgvr.Cells[0].Value = car.id;
+                dgvr.Cells[1].Value = car.manufacturer;
+                dgvr.Cells[2].Value = car.Model;
+                dgvr.Cells[3].Value = car.Year;
+                dgvr.Cells[4].Value = car.Retailer;
+                dgvr.Cells[5].Value = car.Price;
+                dataGridView1.Rows.Add(dgvr);
             }
         }
 
