@@ -74,6 +74,7 @@ namespace CarsOOPGruppProjekt
         }
         private void btnRemove_Click(object sender, EventArgs e)
         {
+            /*
             // Get the collection of selected rows
             
             DataGridViewSelectedRowCollection rows = dataGridView1.SelectedRows;
@@ -91,7 +92,7 @@ namespace CarsOOPGruppProjekt
                 rowView.Delete();
                     
             }
-
+            */
         }
 
         private void btnView_Click(object sender, EventArgs e)
