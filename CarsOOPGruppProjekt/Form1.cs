@@ -22,13 +22,23 @@ namespace CarsOOPGruppProjekt
         {
             //Fyll dropdownlistor
             List<Manufacturer> manufacturers = sqlConn.GetManufacturers();
-            foreach(var manufacturer in manufacturers)
+            foreach (var manufacturer in manufacturers)
             {
                 cmbManufacurers.Items.Add(manufacturer.Name); 
             }
 
+            List<Retailer> retailers = sqlConn.GetRetailers();
+            foreach (var retailer in retailers)
+            {
+                cmbRetailers.Items.Add(retailer.Name);
+            }
+
             //Sätt default värde i dropdownlistor
             cmbManufacurers.SelectedIndex = 0;
+            cmbRetailers.SelectedIndex = 0;
+
+            //Sätt defaultvärden för text
+
         }
 
         private void label5_Click(object sender, EventArgs e)

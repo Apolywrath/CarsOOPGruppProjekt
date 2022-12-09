@@ -127,8 +127,10 @@ namespace CarsOOPGruppProjekt
             
             while (reader.Read())
             {
-                manufacturers.Add(new Manufacturer(reader["Manufacturers_name"].ToString()));
+                manufacturers.Add(new Manufacturer(reader["manufacturers_name"].ToString()));
             }
+
+            _mysqlCon.Close();
 
             return manufacturers;
         }
@@ -142,8 +144,10 @@ namespace CarsOOPGruppProjekt
 
             while (reader.Read())
             {
-                retailers.Add(new Retailer(reader["Retailers_name"].ToString()));
+                retailers.Add(new Retailer(reader["retailers_name"].ToString()));
             }
+
+            _mysqlCon.Close();
 
             return retailers;
         }
