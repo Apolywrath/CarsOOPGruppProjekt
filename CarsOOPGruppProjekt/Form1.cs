@@ -130,13 +130,20 @@ namespace CarsOOPGruppProjekt
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            Cars car = getSelectedDataGridViewCar();
-
-            cmbManufacurers.Text = car.Manufacturer;
-            txtModel.Text = car.Model;
-            txtYear.Text = car.Year;
-            cmbRetailers.Text = car.Retailer;
-            txtPrice.Text = car.Price.ToString();
+            try
+            {
+                Cars car = getSelectedDataGridViewCar();
+                cmbManufacurers.Text = car.Manufacturer;
+                txtModel.Text = car.Model;
+                txtYear.Text = car.Year;
+                cmbRetailers.Text = car.Retailer;
+                txtPrice.Text = car.Price.ToString();
+            }
+            catch
+            {
+                
+            }
+           
         }
     }
 }
