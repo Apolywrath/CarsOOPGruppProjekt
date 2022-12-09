@@ -16,6 +16,13 @@ namespace CarsOOPGruppProjekt
         public Form1()
         {
             InitializeComponent();
+            InitializeGUI();
+        }
+        private void InitializeGUI()
+        {
+            //Fyll dropdownlists
+            List<Manufacturer> manufacturers = sqlConn.GetManufacturers();
+            //cmbManufacurers.Items.AddItem();
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -66,6 +73,16 @@ namespace CarsOOPGruppProjekt
                     car.Retailer + " " +
                     car.Price + ":-");
             }
+        }
+
+        private void searchcmbBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbManufacurers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
