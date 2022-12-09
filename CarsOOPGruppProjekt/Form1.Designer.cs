@@ -48,6 +48,7 @@
             this.cmbManufacurers = new System.Windows.Forms.ComboBox();
             this.searchtxtbox = new System.Windows.Forms.TextBox();
             this.searchcmbBox = new System.Windows.Forms.ComboBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.grbList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grbEdit.SuspendLayout();
@@ -56,11 +57,11 @@
             // grbList
             // 
             this.grbList.Controls.Add(this.dataGridView1);
-            this.grbList.Location = new System.Drawing.Point(16, 332);
-            this.grbList.Margin = new System.Windows.Forms.Padding(4);
+            this.grbList.Location = new System.Drawing.Point(18, 415);
+            this.grbList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grbList.Name = "grbList";
-            this.grbList.Padding = new System.Windows.Forms.Padding(4);
-            this.grbList.Size = new System.Drawing.Size(839, 529);
+            this.grbList.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grbList.Size = new System.Drawing.Size(944, 662);
             this.grbList.TabIndex = 0;
             this.grbList.TabStop = false;
             this.grbList.Text = "Car List";
@@ -79,15 +80,16 @@
             this.Year,
             this.Retailers,
             this.Price});
-            this.dataGridView1.Location = new System.Drawing.Point(8, 22);
+            this.dataGridView1.Location = new System.Drawing.Point(9, 28);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(820, 360);
+            this.dataGridView1.Size = new System.Drawing.Size(922, 449);
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellContentClick);
             // 
             // id
             // 
@@ -134,10 +136,10 @@
             // 
             // btnView
             // 
-            this.btnView.Location = new System.Drawing.Point(24, 289);
-            this.btnView.Margin = new System.Windows.Forms.Padding(4);
+            this.btnView.Location = new System.Drawing.Point(27, 362);
+            this.btnView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(100, 28);
+            this.btnView.Size = new System.Drawing.Size(112, 35);
             this.btnView.TabIndex = 1;
             this.btnView.Text = "View";
             this.btnView.UseVisualStyleBackColor = true;
@@ -145,10 +147,10 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(8, 274);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdd.Location = new System.Drawing.Point(9, 343);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(100, 28);
+            this.btnAdd.Size = new System.Drawing.Size(112, 35);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -156,10 +158,10 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(116, 274);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEdit.Location = new System.Drawing.Point(130, 343);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(100, 28);
+            this.btnEdit.Size = new System.Drawing.Size(112, 35);
             this.btnEdit.TabIndex = 3;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -167,10 +169,10 @@
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(224, 274);
-            this.btnRemove.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRemove.Location = new System.Drawing.Point(252, 343);
+            this.btnRemove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(100, 28);
+            this.btnRemove.Size = new System.Drawing.Size(112, 35);
             this.btnRemove.TabIndex = 4;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
@@ -178,6 +180,7 @@
             // 
             // grbEdit
             // 
+            this.grbEdit.Controls.Add(this.txtId);
             this.grbEdit.Controls.Add(this.txtPrice);
             this.grbEdit.Controls.Add(this.txtYear);
             this.grbEdit.Controls.Add(this.txtModel);
@@ -186,66 +189,66 @@
             this.grbEdit.Controls.Add(this.btnRemove);
             this.grbEdit.Controls.Add(this.btnAdd);
             this.grbEdit.Controls.Add(this.btnEdit);
-            this.grbEdit.Location = new System.Drawing.Point(521, 15);
-            this.grbEdit.Margin = new System.Windows.Forms.Padding(4);
+            this.grbEdit.Location = new System.Drawing.Point(586, 18);
+            this.grbEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grbEdit.Name = "grbEdit";
-            this.grbEdit.Padding = new System.Windows.Forms.Padding(4);
-            this.grbEdit.Size = new System.Drawing.Size(333, 310);
+            this.grbEdit.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grbEdit.Size = new System.Drawing.Size(375, 388);
             this.grbEdit.TabIndex = 5;
             this.grbEdit.TabStop = false;
             this.grbEdit.Text = "Add/Edit/Remove";
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(163, 154);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPrice.Location = new System.Drawing.Point(183, 192);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(161, 22);
+            this.txtPrice.Size = new System.Drawing.Size(181, 26);
             this.txtPrice.TabIndex = 6;
             // 
             // txtYear
             // 
-            this.txtYear.Location = new System.Drawing.Point(163, 89);
-            this.txtYear.Margin = new System.Windows.Forms.Padding(4);
+            this.txtYear.Location = new System.Drawing.Point(183, 111);
+            this.txtYear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtYear.Name = "txtYear";
-            this.txtYear.Size = new System.Drawing.Size(160, 22);
+            this.txtYear.Size = new System.Drawing.Size(180, 26);
             this.txtYear.TabIndex = 6;
             // 
             // txtModel
             // 
-            this.txtModel.Location = new System.Drawing.Point(163, 57);
-            this.txtModel.Margin = new System.Windows.Forms.Padding(4);
+            this.txtModel.Location = new System.Drawing.Point(183, 71);
+            this.txtModel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtModel.Name = "txtModel";
-            this.txtModel.Size = new System.Drawing.Size(161, 22);
+            this.txtModel.Size = new System.Drawing.Size(181, 26);
             this.txtModel.TabIndex = 6;
             // 
             // cmbRetailers
             // 
             this.cmbRetailers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRetailers.FormattingEnabled = true;
-            this.cmbRetailers.Location = new System.Drawing.Point(163, 121);
-            this.cmbRetailers.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbRetailers.Location = new System.Drawing.Point(183, 151);
+            this.cmbRetailers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbRetailers.Name = "cmbRetailers";
-            this.cmbRetailers.Size = new System.Drawing.Size(160, 24);
+            this.cmbRetailers.Size = new System.Drawing.Size(180, 28);
             this.cmbRetailers.TabIndex = 6;
             // 
             // cmbManufacurers
             // 
             this.cmbManufacurers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbManufacurers.FormattingEnabled = true;
-            this.cmbManufacurers.Location = new System.Drawing.Point(163, 23);
-            this.cmbManufacurers.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbManufacurers.Location = new System.Drawing.Point(183, 29);
+            this.cmbManufacurers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbManufacurers.Name = "cmbManufacurers";
-            this.cmbManufacurers.Size = new System.Drawing.Size(160, 24);
+            this.cmbManufacurers.Size = new System.Drawing.Size(180, 28);
             this.cmbManufacurers.TabIndex = 6;
             this.cmbManufacurers.SelectedIndexChanged += new System.EventHandler(this.cmbManufacurers_SelectedIndexChanged);
             // 
             // searchtxtbox
             // 
-            this.searchtxtbox.Location = new System.Drawing.Point(280, 295);
-            this.searchtxtbox.Margin = new System.Windows.Forms.Padding(4);
+            this.searchtxtbox.Location = new System.Drawing.Point(315, 369);
+            this.searchtxtbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.searchtxtbox.Name = "searchtxtbox";
-            this.searchtxtbox.Size = new System.Drawing.Size(161, 22);
+            this.searchtxtbox.Size = new System.Drawing.Size(181, 26);
             this.searchtxtbox.TabIndex = 7;
             this.searchtxtbox.TextChanged += new System.EventHandler(this.searchtxtbox_TextChanged);
             // 
@@ -257,27 +260,35 @@
             "Model",
             "Year",
             "Price"});
-            this.searchcmbBox.Location = new System.Drawing.Point(152, 292);
-            this.searchcmbBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.searchcmbBox.Location = new System.Drawing.Point(171, 365);
             this.searchcmbBox.Name = "searchcmbBox";
-            this.searchcmbBox.Size = new System.Drawing.Size(121, 24);
+            this.searchcmbBox.Size = new System.Drawing.Size(136, 28);
             this.searchcmbBox.TabIndex = 8;
             this.searchcmbBox.Text = "Model";
             this.searchcmbBox.SelectedIndexChanged += new System.EventHandler(this.searchcmbBox_SelectedIndexChanged);
             // 
+            // txtId
+            // 
+            this.txtId.Enabled = false;
+            this.txtId.Location = new System.Drawing.Point(177, 151);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(67, 20);
+            this.txtId.TabIndex = 7;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(871, 876);
+            this.ClientSize = new System.Drawing.Size(980, 1050);
             this.Controls.Add(this.searchcmbBox);
             this.Controls.Add(this.searchtxtbox);
             this.Controls.Add(this.grbEdit);
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.grbList);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.grbList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.grbEdit.ResumeLayout(false);
@@ -309,6 +320,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Year;
         private System.Windows.Forms.DataGridViewTextBoxColumn Retailers;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.TextBox txtId;
     }
 }
 
