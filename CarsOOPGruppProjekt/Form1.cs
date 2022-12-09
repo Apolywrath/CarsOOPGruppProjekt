@@ -130,6 +130,7 @@ namespace CarsOOPGruppProjekt
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            //Hämtar data från datagrid och representerar värden till text-&comboboxes
             try
             {
                 Cars car = getSelectedDataGridViewCar();
@@ -141,7 +142,7 @@ namespace CarsOOPGruppProjekt
             }
             catch
             {
-                
+                //Inget händer!
             }
            
         }
