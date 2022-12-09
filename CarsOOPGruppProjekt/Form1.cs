@@ -135,6 +135,7 @@ namespace CarsOOPGruppProjekt
             try
             {
                 Cars car = getSelectedDataGridViewCar();
+                txtId.Text = car.Id.ToString();
                 cmbManufacurers.Text = car.Manufacturer;
                 txtModel.Text = car.Model;
                 txtYear.Text = car.Year;
