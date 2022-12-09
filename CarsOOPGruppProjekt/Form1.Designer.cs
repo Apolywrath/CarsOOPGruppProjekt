@@ -154,6 +154,7 @@
             // 
             // cmbRetailers
             // 
+            this.cmbRetailers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRetailers.FormattingEnabled = true;
             this.cmbRetailers.Location = new System.Drawing.Point(163, 121);
             this.cmbRetailers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -163,6 +164,7 @@
             // 
             // cmbManufacurers
             // 
+            this.cmbManufacurers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbManufacurers.FormattingEnabled = true;
             this.cmbManufacurers.Location = new System.Drawing.Point(163, 23);
             this.cmbManufacurers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
