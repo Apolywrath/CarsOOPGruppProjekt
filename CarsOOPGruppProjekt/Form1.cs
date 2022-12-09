@@ -55,7 +55,7 @@ namespace CarsOOPGruppProjekt
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-
+            string id = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -69,7 +69,9 @@ namespace CarsOOPGruppProjekt
             dataGridView1.Rows.Clear();
             foreach (var car in cars)
             {
+                //DataGridViewRow = en rad i datagridview t.ex. en rad i Excel.
                 DataGridViewRow dgvr = new DataGridViewRow();
+                //Fungerar lite som i ett excel dokument. Cell[0] = id som är gömd men kan användas av oss.
                 dgvr.CreateCells(dataGridView1);
                 dgvr.Cells[0].Value = car.id;
                 dgvr.Cells[1].Value = car.manufacturer;
@@ -88,7 +90,9 @@ namespace CarsOOPGruppProjekt
             dataGridView1.Rows.Clear();
             foreach (var car in cars)
             {
+                //DataGridViewRow = en rad i datagridview t.ex. en rad i Excel.
                 DataGridViewRow dgvr = new DataGridViewRow();
+                //Fungerar lite som i ett excel dokument. Cell[0] = id som är gömd men kan användas av oss.
                 dgvr.CreateCells(dataGridView1);
                 dgvr.Cells[0].Value = car.id;
                 dgvr.Cells[1].Value = car.manufacturer;

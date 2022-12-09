@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             this.grbList = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Manufacturer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Model = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Retailers = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnView = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -41,162 +48,22 @@
             this.cmbManufacurers = new System.Windows.Forms.ComboBox();
             this.searchtxtbox = new System.Windows.Forms.TextBox();
             this.searchcmbBox = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Manufacturer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Model = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Retailers = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbList.SuspendLayout();
-            this.grbEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.grbEdit.SuspendLayout();
             this.SuspendLayout();
             // 
             // grbList
             // 
             this.grbList.Controls.Add(this.dataGridView1);
             this.grbList.Location = new System.Drawing.Point(16, 332);
-            this.grbList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grbList.Margin = new System.Windows.Forms.Padding(4);
             this.grbList.Name = "grbList";
-            this.grbList.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grbList.Padding = new System.Windows.Forms.Padding(4);
             this.grbList.Size = new System.Drawing.Size(839, 529);
             this.grbList.TabIndex = 0;
             this.grbList.TabStop = false;
             this.grbList.Text = "Car List";
-            // 
-            // btnView
-            // 
-            this.btnView.Location = new System.Drawing.Point(24, 289);
-            this.btnView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(100, 28);
-            this.btnView.TabIndex = 1;
-            this.btnView.Text = "View";
-            this.btnView.UseVisualStyleBackColor = true;
-            this.btnView.Click += new System.EventHandler(this.btnView_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(8, 274);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(100, 28);
-            this.btnAdd.TabIndex = 2;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(116, 274);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(100, 28);
-            this.btnEdit.TabIndex = 3;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnRemove
-            // 
-            this.btnRemove.Location = new System.Drawing.Point(224, 274);
-            this.btnRemove.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(100, 28);
-            this.btnRemove.TabIndex = 4;
-            this.btnRemove.Text = "Remove";
-            this.btnRemove.UseVisualStyleBackColor = true;
-            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
-            // 
-            // grbEdit
-            // 
-            this.grbEdit.Controls.Add(this.txtPrice);
-            this.grbEdit.Controls.Add(this.txtYear);
-            this.grbEdit.Controls.Add(this.txtModel);
-            this.grbEdit.Controls.Add(this.cmbRetailers);
-            this.grbEdit.Controls.Add(this.cmbManufacurers);
-            this.grbEdit.Controls.Add(this.btnRemove);
-            this.grbEdit.Controls.Add(this.btnAdd);
-            this.grbEdit.Controls.Add(this.btnEdit);
-            this.grbEdit.Location = new System.Drawing.Point(521, 15);
-            this.grbEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.grbEdit.Name = "grbEdit";
-            this.grbEdit.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.grbEdit.Size = new System.Drawing.Size(333, 310);
-            this.grbEdit.TabIndex = 5;
-            this.grbEdit.TabStop = false;
-            this.grbEdit.Text = "Add/Edit/Remove";
-            // 
-            // txtPrice
-            // 
-            this.txtPrice.Location = new System.Drawing.Point(163, 154);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(161, 22);
-            this.txtPrice.TabIndex = 6;
-            // 
-            // txtYear
-            // 
-            this.txtYear.Location = new System.Drawing.Point(163, 89);
-            this.txtYear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtYear.Name = "txtYear";
-            this.txtYear.Size = new System.Drawing.Size(160, 22);
-            this.txtYear.TabIndex = 6;
-            // 
-            // txtModel
-            // 
-            this.txtModel.Location = new System.Drawing.Point(163, 57);
-            this.txtModel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtModel.Name = "txtModel";
-            this.txtModel.Size = new System.Drawing.Size(161, 22);
-            this.txtModel.TabIndex = 6;
-            // 
-            // cmbRetailers
-            // 
-            this.cmbRetailers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbRetailers.FormattingEnabled = true;
-            this.cmbRetailers.Location = new System.Drawing.Point(163, 121);
-            this.cmbRetailers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cmbRetailers.Name = "cmbRetailers";
-            this.cmbRetailers.Size = new System.Drawing.Size(160, 24);
-            this.cmbRetailers.TabIndex = 6;
-            // 
-            // cmbManufacurers
-            // 
-            this.cmbManufacurers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbManufacurers.FormattingEnabled = true;
-            this.cmbManufacurers.Location = new System.Drawing.Point(163, 23);
-            this.cmbManufacurers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cmbManufacurers.Name = "cmbManufacurers";
-            this.cmbManufacurers.Size = new System.Drawing.Size(160, 24);
-            this.cmbManufacurers.TabIndex = 6;
-            this.cmbManufacurers.SelectedIndexChanged += new System.EventHandler(this.cmbManufacurers_SelectedIndexChanged);
-            // 
-            // searchtxtbox
-            // 
-            this.searchtxtbox.Location = new System.Drawing.Point(280, 295);
-            this.searchtxtbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.searchtxtbox.Name = "searchtxtbox";
-            this.searchtxtbox.Size = new System.Drawing.Size(161, 22);
-            this.searchtxtbox.TabIndex = 7;
-            this.searchtxtbox.TextChanged += new System.EventHandler(this.searchtxtbox_TextChanged);
-            // 
-            // searchcmbBox
-            // 
-            this.searchcmbBox.DisplayMember = "Model";
-            this.searchcmbBox.FormattingEnabled = true;
-            this.searchcmbBox.Items.AddRange(new object[] {
-            "Model",
-            "Year",
-            "Price"});
-            this.searchcmbBox.Location = new System.Drawing.Point(152, 292);
-            this.searchcmbBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.searchcmbBox.Name = "searchcmbBox";
-            this.searchcmbBox.Size = new System.Drawing.Size(121, 24);
-            this.searchcmbBox.TabIndex = 8;
-            this.searchcmbBox.Text = "Model";
-            this.searchcmbBox.SelectedIndexChanged += new System.EventHandler(this.searchcmbBox_SelectedIndexChanged);
             // 
             // dataGridView1
             // 
@@ -212,6 +79,7 @@
             this.Retailers,
             this.Price});
             this.dataGridView1.Location = new System.Drawing.Point(8, 22);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -268,6 +136,139 @@
             this.Price.ReadOnly = true;
             this.Price.Width = 125;
             // 
+            // btnView
+            // 
+            this.btnView.Location = new System.Drawing.Point(24, 289);
+            this.btnView.Margin = new System.Windows.Forms.Padding(4);
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(100, 28);
+            this.btnView.TabIndex = 1;
+            this.btnView.Text = "View";
+            this.btnView.UseVisualStyleBackColor = true;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(8, 274);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(100, 28);
+            this.btnAdd.TabIndex = 2;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(116, 274);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(100, 28);
+            this.btnEdit.TabIndex = 3;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.Location = new System.Drawing.Point(224, 274);
+            this.btnRemove.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(100, 28);
+            this.btnRemove.TabIndex = 4;
+            this.btnRemove.Text = "Remove";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // grbEdit
+            // 
+            this.grbEdit.Controls.Add(this.txtPrice);
+            this.grbEdit.Controls.Add(this.txtYear);
+            this.grbEdit.Controls.Add(this.txtModel);
+            this.grbEdit.Controls.Add(this.cmbRetailers);
+            this.grbEdit.Controls.Add(this.cmbManufacurers);
+            this.grbEdit.Controls.Add(this.btnRemove);
+            this.grbEdit.Controls.Add(this.btnAdd);
+            this.grbEdit.Controls.Add(this.btnEdit);
+            this.grbEdit.Location = new System.Drawing.Point(521, 15);
+            this.grbEdit.Margin = new System.Windows.Forms.Padding(4);
+            this.grbEdit.Name = "grbEdit";
+            this.grbEdit.Padding = new System.Windows.Forms.Padding(4);
+            this.grbEdit.Size = new System.Drawing.Size(333, 310);
+            this.grbEdit.TabIndex = 5;
+            this.grbEdit.TabStop = false;
+            this.grbEdit.Text = "Add/Edit/Remove";
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.Location = new System.Drawing.Point(163, 154);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(161, 22);
+            this.txtPrice.TabIndex = 6;
+            // 
+            // txtYear
+            // 
+            this.txtYear.Location = new System.Drawing.Point(163, 89);
+            this.txtYear.Margin = new System.Windows.Forms.Padding(4);
+            this.txtYear.Name = "txtYear";
+            this.txtYear.Size = new System.Drawing.Size(160, 22);
+            this.txtYear.TabIndex = 6;
+            // 
+            // txtModel
+            // 
+            this.txtModel.Location = new System.Drawing.Point(163, 57);
+            this.txtModel.Margin = new System.Windows.Forms.Padding(4);
+            this.txtModel.Name = "txtModel";
+            this.txtModel.Size = new System.Drawing.Size(161, 22);
+            this.txtModel.TabIndex = 6;
+            // 
+            // cmbRetailers
+            // 
+            this.cmbRetailers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRetailers.FormattingEnabled = true;
+            this.cmbRetailers.Location = new System.Drawing.Point(163, 121);
+            this.cmbRetailers.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbRetailers.Name = "cmbRetailers";
+            this.cmbRetailers.Size = new System.Drawing.Size(160, 24);
+            this.cmbRetailers.TabIndex = 6;
+            // 
+            // cmbManufacurers
+            // 
+            this.cmbManufacurers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbManufacurers.FormattingEnabled = true;
+            this.cmbManufacurers.Location = new System.Drawing.Point(163, 23);
+            this.cmbManufacurers.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbManufacurers.Name = "cmbManufacurers";
+            this.cmbManufacurers.Size = new System.Drawing.Size(160, 24);
+            this.cmbManufacurers.TabIndex = 6;
+            this.cmbManufacurers.SelectedIndexChanged += new System.EventHandler(this.cmbManufacurers_SelectedIndexChanged);
+            // 
+            // searchtxtbox
+            // 
+            this.searchtxtbox.Location = new System.Drawing.Point(280, 295);
+            this.searchtxtbox.Margin = new System.Windows.Forms.Padding(4);
+            this.searchtxtbox.Name = "searchtxtbox";
+            this.searchtxtbox.Size = new System.Drawing.Size(161, 22);
+            this.searchtxtbox.TabIndex = 7;
+            this.searchtxtbox.TextChanged += new System.EventHandler(this.searchtxtbox_TextChanged);
+            // 
+            // searchcmbBox
+            // 
+            this.searchcmbBox.DisplayMember = "Model";
+            this.searchcmbBox.FormattingEnabled = true;
+            this.searchcmbBox.Items.AddRange(new object[] {
+            "Model",
+            "Year",
+            "Price"});
+            this.searchcmbBox.Location = new System.Drawing.Point(152, 292);
+            this.searchcmbBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.searchcmbBox.Name = "searchcmbBox";
+            this.searchcmbBox.Size = new System.Drawing.Size(121, 24);
+            this.searchcmbBox.TabIndex = 8;
+            this.searchcmbBox.Text = "Model";
+            this.searchcmbBox.SelectedIndexChanged += new System.EventHandler(this.searchcmbBox_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -278,13 +279,13 @@
             this.Controls.Add(this.grbEdit);
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.grbList);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.grbList.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.grbEdit.ResumeLayout(false);
             this.grbEdit.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
