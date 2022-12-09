@@ -20,9 +20,15 @@ namespace CarsOOPGruppProjekt
         }
         private void InitializeGUI()
         {
-            //Fyll dropdownlists
+            //Fyll dropdownlistor
             List<Manufacturer> manufacturers = sqlConn.GetManufacturers();
-            //cmbManufacurers.Items.AddItem();
+            foreach(var manufacturer in manufacturers)
+            {
+                cmbManufacurers.Items.Add(manufacturer.Name); 
+            }
+
+            //Sätt default värde i dropdownlistor
+            cmbManufacurers.SelectedIndex = 0;
         }
 
         private void label5_Click(object sender, EventArgs e)

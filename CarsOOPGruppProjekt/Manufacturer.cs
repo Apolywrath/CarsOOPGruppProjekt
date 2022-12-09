@@ -8,6 +8,8 @@ namespace CarsOOPGruppProjekt
 {
     internal class Manufacturer
     {
+        //name = id
+
         string name;
 
         public Manufacturer(string name)

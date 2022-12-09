@@ -117,6 +117,23 @@ namespace CarsOOPGruppProjekt
             _mysqlCon.Close();
             return sqlCarList;
         }
+
+        public List<Manufacturer> GetManufacturers()
+        {
+            //Lägger till tillverkare i lista med tillverkare och returnerar listan
+            List<Manufacturer> manufacturers = new List<Manufacturer>();
+            _mysqlCon.Open();
+            MySqlDataReader reader = new MySqlCommand("SELECT * FROM MANUFACTURERS", _mysqlCon).ExecuteReader();
+            
+
+            while (reader.Read())
+            {
+                manufacturers.Add(new Manufacturer(reader["Manufacturers_name"].ToString()));
+            }
+
+            return manufacturers;
+        }
+
         public string columNameFixer(string columName)
         {
             // Simpel Switch case. Får den in "Model" så retunerar den cars_model etc.
