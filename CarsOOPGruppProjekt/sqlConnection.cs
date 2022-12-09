@@ -83,14 +83,19 @@ namespace CarsOOPGruppProjekt
 
         public List<Cars> searchUpdate(string keyWord, string comboString)
         {
+            //Om man raderar allt = att den kör vanliga getData();
             if(keyWord == "")
             {
                 return getData();
             }
+            // Ändrar om så vi får rätt colummnamn i databasen
             string columName = columNameFixer(comboString);
+            // SQL Query
             string query = String.Format("SELECT * FROM CARS WHERE {0} LIKE @colValue", columName);
+            // Skapar ett sql command som sedan ändrar om value på @colValue till det som är i variable. 
             MySqlCommand cmd = new MySqlCommand(query, _mysqlCon);
             cmd.Parameters.AddWithValue("@colValue", "%"+keyWord+"%");
+            //Öppnar SQL connection
             _mysqlCon.Open();
             MySqlDataReader reader = cmd.ExecuteReader();
             //Skapar en temp List med classen Cars
@@ -114,6 +119,7 @@ namespace CarsOOPGruppProjekt
         }
         public string columNameFixer(string columName)
         {
+            // Simpel Switch case. Får den in "Model" så retunerar den cars_model etc.
             switch(columName)
                 {
                 case "Model":
