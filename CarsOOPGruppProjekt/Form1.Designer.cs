@@ -41,7 +41,7 @@
             this.btnRemove = new System.Windows.Forms.Button();
             this.grbEdit = new System.Windows.Forms.GroupBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
-            this.Year = new System.Windows.Forms.TextBox();
+            this.txtYear = new System.Windows.Forms.TextBox();
             this.txtModel = new System.Windows.Forms.TextBox();
             this.cmbRetailers = new System.Windows.Forms.ComboBox();
             this.cmbManufacurers = new System.Windows.Forms.ComboBox();
@@ -163,7 +163,7 @@
             // grbEdit
             // 
             this.grbEdit.Controls.Add(this.txtPrice);
-            this.grbEdit.Controls.Add(this.Year);
+            this.grbEdit.Controls.Add(this.txtYear);
             this.grbEdit.Controls.Add(this.txtModel);
             this.grbEdit.Controls.Add(this.cmbRetailers);
             this.grbEdit.Controls.Add(this.cmbManufacurers);
@@ -184,12 +184,12 @@
             this.txtPrice.Size = new System.Drawing.Size(122, 20);
             this.txtPrice.TabIndex = 6;
             // 
-            // Year
+            // txtYear
             // 
-            this.Year.Location = new System.Drawing.Point(122, 72);
-            this.Year.Name = "Year";
-            this.Year.Size = new System.Drawing.Size(121, 20);
-            this.Year.TabIndex = 6;
+            this.txtYear.Location = new System.Drawing.Point(122, 72);
+            this.txtYear.Name = "txtYear";
+            this.txtYear.Size = new System.Drawing.Size(121, 20);
+            this.txtYear.TabIndex = 6;
             // 
             // txtModel
             // 
@@ -275,7 +275,7 @@
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.GroupBox grbEdit;
         private System.Windows.Forms.TextBox txtPrice;
-        private System.Windows.Forms.TextBox Year;
+        private System.Windows.Forms.TextBox txtYear;
         private System.Windows.Forms.TextBox txtModel;
         private System.Windows.Forms.ComboBox cmbRetailers;
         private System.Windows.Forms.ComboBox cmbManufacurers;

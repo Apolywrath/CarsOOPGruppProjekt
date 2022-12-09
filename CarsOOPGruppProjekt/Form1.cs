@@ -38,7 +38,9 @@ namespace CarsOOPGruppProjekt
             cmbRetailers.SelectedIndex = 0;
 
             //Sätt defaultvärden för text
-
+            txtModel.Text = "model";
+            txtPrice.Text = "0";
+            txtYear.Text = "xxxx";
         }
 
         private void label5_Click(object sender, EventArgs e)
