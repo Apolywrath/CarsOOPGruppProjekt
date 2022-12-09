@@ -139,9 +139,11 @@ namespace CarsOOPGruppProjekt
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             //Hämtar data från datagrid och representerar värden till text-&comboboxes
+            //try/catch hanterar situationer då index är outofbounds
             try
             {
                 Cars car = getSelectedDataGridViewCar();
+                txtId.Text = car.Id.ToString();
                 cmbManufacurers.Text = car.Manufacturer;
                 txtModel.Text = car.Model;
                 txtYear.Text = car.Year;

@@ -48,6 +48,7 @@
             this.cmbManufacurers = new System.Windows.Forms.ComboBox();
             this.searchtxtbox = new System.Windows.Forms.TextBox();
             this.searchcmbBox = new System.Windows.Forms.ComboBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.grbList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grbEdit.SuspendLayout();
@@ -178,6 +179,7 @@
             // 
             // grbEdit
             // 
+            this.grbEdit.Controls.Add(this.txtId);
             this.grbEdit.Controls.Add(this.txtPrice);
             this.grbEdit.Controls.Add(this.txtYear);
             this.grbEdit.Controls.Add(this.txtModel);
@@ -264,6 +266,14 @@
             this.searchcmbBox.Text = "Model";
             this.searchcmbBox.SelectedIndexChanged += new System.EventHandler(this.searchcmbBox_SelectedIndexChanged);
             // 
+            // txtId
+            // 
+            this.txtId.Enabled = false;
+            this.txtId.Location = new System.Drawing.Point(177, 151);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(67, 20);
+            this.txtId.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -309,6 +319,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Year;
         private System.Windows.Forms.DataGridViewTextBoxColumn Retailers;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.TextBox txtId;
     }
 }
 
