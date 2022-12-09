@@ -50,7 +50,15 @@ namespace CarsOOPGruppProjekt
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            string strModel = txtModel.Text;
+            string strName = cmbManufacurers.Text;
+            int intYear = Convert.ToInt32(txtYear.Text);
+            string strRetail = cmbRetailers.Text;
+            int intPrice = Convert.ToInt32(txtPrice.Text);
 
+            string strSql = $"CALL addCar('{strModel}','{strName}','{intYear}','{strRetail}','{intPrice}')";
+
+            sqlConn.AddCar(strSql);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -126,7 +134,7 @@ namespace CarsOOPGruppProjekt
                 DataGridViewRow dgvr = new DataGridViewRow();
                 //Fungerar lite som i ett excel dokument. Cell[0] = id som är gömd men kan användas av oss.
                 dgvr.CreateCells(dataGridView1);
-                dgvr.Cells[0].Value = car.id;
+                dgvr.Cells[0].Value = car.Id;
                 dgvr.Cells[1].Value = car.manufacturer;
                 dgvr.Cells[2].Value = car.Model;
                 dgvr.Cells[3].Value = car.Year;
@@ -142,6 +150,32 @@ namespace CarsOOPGruppProjekt
         }
 
         private void cmbManufacurers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            //Hämtar data från datagrid och representerar värden till text-&comboboxes
+            //try/catch hanterar situationer då index är outofbounds
+            try
+            {
+                Cars car = getSelectedDataGridViewCar();
+                txtId.Text = car.Id.ToString();
+                cmbManufacurers.Text = car.Manufacturer;
+                txtModel.Text = car.Model;
+                txtYear.Text = car.Year;
+                cmbRetailers.Text = car.Retailer;
+                txtPrice.Text = car.Price.ToString();
+            }
+            catch
+            {
+                //Inget händer!
+            }
+           
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
