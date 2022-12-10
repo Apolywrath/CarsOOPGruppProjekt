@@ -154,6 +154,8 @@ namespace CarsOOPGruppProjekt
                 txtYear.Text = car.Year;
                 cmbRetailers.Text = car.Retailer;
                 txtPrice.Text = car.Price.ToString();
+                btnCancel.Enabled = true;
+                btnAdd.Enabled = false;
             }
             catch
             {
@@ -170,6 +172,13 @@ namespace CarsOOPGruppProjekt
         private void btnCancel_Click(object sender, EventArgs e)
         {
             UpdateGUI();
+            btnCancel.Enabled = false;
+            btnAdd.Enabled = true;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
