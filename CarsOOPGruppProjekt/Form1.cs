@@ -32,7 +32,11 @@ namespace CarsOOPGruppProjekt
             {
                 cmbRetailers.Items.Add(retailer.Name);
             }
+            UpdateGUI();
+        }
 
+        private void UpdateGUI()
+        {
             //Sätt default värde i dropdownlistor
             cmbManufacurers.SelectedIndex = 0;
             cmbRetailers.SelectedIndex = 0;
@@ -41,6 +45,7 @@ namespace CarsOOPGruppProjekt
             txtModel.Text = "model";
             txtPrice.Text = "0";
             txtYear.Text = "xxxx";
+            txtId.Text = "";
         }
 
         private void label5_Click(object sender, EventArgs e)
