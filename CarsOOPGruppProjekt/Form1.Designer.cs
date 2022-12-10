@@ -49,6 +49,7 @@
             this.cmbManufacurers = new System.Windows.Forms.ComboBox();
             this.searchtxtbox = new System.Windows.Forms.TextBox();
             this.searchcmbBox = new System.Windows.Forms.ComboBox();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.grbList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grbEdit.SuspendLayout();
@@ -79,7 +80,7 @@
             this.Retailers,
             this.Price});
             this.dataGridView1.Location = new System.Drawing.Point(6, 18);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -174,6 +175,7 @@
             // 
             // grbEdit
             // 
+            this.grbEdit.Controls.Add(this.btnCancel);
             this.grbEdit.Controls.Add(this.txtId);
             this.grbEdit.Controls.Add(this.txtPrice);
             this.grbEdit.Controls.Add(this.txtYear);
@@ -194,7 +196,7 @@
             // 
             this.txtId.Enabled = false;
             this.txtId.Location = new System.Drawing.Point(196, 150);
-            this.txtId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtId.Margin = new System.Windows.Forms.Padding(2);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(46, 20);
             this.txtId.TabIndex = 7;
@@ -256,12 +258,22 @@
             "Year",
             "Price"});
             this.searchcmbBox.Location = new System.Drawing.Point(114, 237);
-            this.searchcmbBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchcmbBox.Margin = new System.Windows.Forms.Padding(2);
             this.searchcmbBox.Name = "searchcmbBox";
             this.searchcmbBox.Size = new System.Drawing.Size(92, 21);
             this.searchcmbBox.TabIndex = 8;
             this.searchcmbBox.Text = "Model";
             this.searchcmbBox.SelectedIndexChanged += new System.EventHandler(this.searchcmbBox_SelectedIndexChanged);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Enabled = false;
+            this.btnCancel.Location = new System.Drawing.Point(87, 182);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 8;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -308,6 +320,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Retailers;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
 
