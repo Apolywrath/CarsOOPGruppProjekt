@@ -243,7 +243,7 @@
             // 
             // searchtxtbox
             // 
-            this.searchtxtbox.Location = new System.Drawing.Point(210, 240);
+            this.searchtxtbox.Location = new System.Drawing.Point(211, 237);
             this.searchtxtbox.Name = "searchtxtbox";
             this.searchtxtbox.Size = new System.Drawing.Size(122, 20);
             this.searchtxtbox.TabIndex = 7;
