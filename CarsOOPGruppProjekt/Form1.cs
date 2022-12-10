@@ -68,7 +68,6 @@ namespace CarsOOPGruppProjekt
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            
             string id = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
             cmbManufacurers.SelectedItem = getSelectedDataGridViewCar().manufacturer;
         }
@@ -171,6 +170,7 @@ namespace CarsOOPGruppProjekt
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            //Uppdaterar GUI till default & sätter knappar
             UpdateGUI();
             btnCancel.Enabled = false;
             btnAdd.Enabled = true;
