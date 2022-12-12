@@ -101,6 +101,7 @@ namespace CarsOOPGruppProjekt
             txtId.Text = carsedit.Id.ToString();
             btnApply.Enabled = true;
             btnCancel.Enabled = true;
+            FillList();
         }
 
         // Get current selected Row Data from dataGridView1 for easier handling.
