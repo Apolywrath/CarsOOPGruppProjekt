@@ -33,6 +33,9 @@ namespace CarsOOPGruppProjekt
             {
                 cmbRetailers.Items.Add(retailer.Name);
             }
+
+            btnApply.Hide();
+
             UpdateGUI();
         }
 
@@ -71,12 +74,11 @@ namespace CarsOOPGruppProjekt
         {
             Cars carsedit = getSelectedDataGridViewCar();
             cmbManufacurers.SelectedItem = carsedit.manufacturer;
-            txtModel.SelectedText = carsedit.Model;
-            txtYear.SelectedText = carsedit.Year;
+            txtModel.Text = carsedit.Model;
+            txtYear.Text = carsedit.Year;
             cmbRetailers.SelectedItem = carsedit.Retailer;
-            txtPrice.SelectedText = carsedit.Price.ToString();
-            //string queryedit = String.Format("UPDATE cars SET manufacturers_manufacturers_name = '{0}', cars_model = '{1}', cars_year = '{2}', retailers_retailers_name = '{3}', cars_price = '{4}' WHERE cars_id = '{5}'", cmbManufacurers.SelectedItem, txtModel.Text, txtYear.Text, cmbRetailers.SelectedItem, txtPrice.Text, carsedit.id);
-            //sqlConn.updateSqlData(queryedit);
+            txtPrice.Text = carsedit.Price.ToString();
+            btnApply.Show();
         }
 
         // Get current selected Row Data from dataGridView1 for easier handling.
@@ -224,6 +226,13 @@ namespace CarsOOPGruppProjekt
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+            //string queryedit = String.Format("UPDATE cars SET manufacturers_manufacturers_name = '{0}', cars_model = '{1}', cars_year = '{2}', retailers_retailers_name = '{3}', cars_price = '{4}' WHERE cars_id = '{5}'", cmbManufacurers.SelectedItem, txtModel.Text, txtYear.Text, cmbRetailers.SelectedItem, txtPrice.Text, carsedit.id);
+            //sqlConn.updateSqlData(queryedit);
+            btnApply.Hide();
         }
     }
 }
