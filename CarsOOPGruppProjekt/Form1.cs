@@ -13,11 +13,11 @@ namespace CarsOOPGruppProjekt
     public partial class Form1 : Form
     {
         sqlConnection sqlConn = new sqlConnection();
+        RandomDataForm randDForm = new RandomDataForm();
         public Form1()
         {
             InitializeComponent();
             InitializeGUI();
-            List<Cars> cars = GeneratedData.generatedCars(10);
         }
         private void InitializeGUI()
         {
@@ -233,6 +233,15 @@ namespace CarsOOPGruppProjekt
             //string queryedit = String.Format("UPDATE cars SET manufacturers_manufacturers_name = '{0}', cars_model = '{1}', cars_year = '{2}', retailers_retailers_name = '{3}', cars_price = '{4}' WHERE cars_id = '{5}'", cmbManufacurers.SelectedItem, txtModel.Text, txtYear.Text, cmbRetailers.SelectedItem, txtPrice.Text, carsedit.id);
             //sqlConn.updateSqlData(queryedit);
             btnApply.Hide();
+        }
+
+        private void randomToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            randDForm.Show();
+            randDForm.Width = this.Width;
+            randDForm.Height = this.Height;
+            randDForm.Location = this.Location;
         }
     }
 }
