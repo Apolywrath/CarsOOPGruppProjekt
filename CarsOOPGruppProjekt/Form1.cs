@@ -86,7 +86,25 @@ namespace CarsOOPGruppProjekt
         }
         private void btnRemove_Click(object sender, EventArgs e)
         {
+            /*
+            // Get the collection of selected rows
+            
+            DataGridViewSelectedRowCollection rows = dataGridView1.SelectedRows;
 
+            // Loop through the colleciton of rows
+            foreach (DataGridViewRow row in rows)
+            
+            {
+                //Get the DataRowView object for the current row
+
+                DataRowView rowView = row.DataBoundItem as DataRowView;
+
+                // Delete the record corresponding to the current row
+
+                rowView.Delete();
+                    
+            }
+            */
         }
 
         private void btnView_Click(object sender, EventArgs e)
@@ -136,6 +154,11 @@ namespace CarsOOPGruppProjekt
         }
 
         private void cmbManufacurers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
