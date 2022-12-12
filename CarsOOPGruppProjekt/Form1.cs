@@ -242,6 +242,7 @@ namespace CarsOOPGruppProjekt
             sqlConn.updateSqlData(queryedit);
             btnApply.Enabled = false;
             btnCancel.Enabled = false;
+            FillList();
         }
 
         private void randomToolStripMenuItem_Click(object sender, EventArgs e)
