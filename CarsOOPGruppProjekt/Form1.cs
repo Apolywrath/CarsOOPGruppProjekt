@@ -148,6 +148,7 @@ namespace CarsOOPGruppProjekt
             string strSql = $"CALL deleteCar('{carsedit.id}')";
 
             sqlConn.DeleteCar(strSql);
+            FillList();
         }
          
         
