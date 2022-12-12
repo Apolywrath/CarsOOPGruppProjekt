@@ -141,12 +141,11 @@
             // 
             // btnView
             // 
-            this.btnView.Enabled = false;
             this.btnView.Location = new System.Drawing.Point(18, 235);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(75, 23);
             this.btnView.TabIndex = 1;
-            this.btnView.Text = "View";
+            this.btnView.Text = "Refresh";
             this.btnView.UseVisualStyleBackColor = true;
             this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
