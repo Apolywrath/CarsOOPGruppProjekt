@@ -66,8 +66,8 @@ namespace CarsOOPGruppProjekt
                 dgvr.Cells[0].Value = car.id;
                 dgvr.Cells[1].Value = car.manufacturer;
                 dgvr.Cells[2].Value = car.Model;
-                dgvr.Cells[3].Value = car.Year;
-                dgvr.Cells[4].Value = car.Retailer;
+                dgvr.Cells[4].Value = car.Year;
+                dgvr.Cells[3].Value = car.Retailer;
                 dgvr.Cells[5].Value = car.Price;
                 dataGridView1.Rows.Add(dgvr);
             }
@@ -103,6 +103,7 @@ namespace CarsOOPGruppProjekt
             txtId.Text = carsedit.Id.ToString();
             btnApply.Enabled = true;
             btnCancel.Enabled = true;
+            FillList();
         }
 
         // Get current selected Row Data from dataGridView1 for easier handling.
@@ -245,6 +246,7 @@ namespace CarsOOPGruppProjekt
             sqlConn.updateSqlData(queryedit);
             btnApply.Enabled = false;
             btnCancel.Enabled = false;
+            FillList();
         }
 
         private void randomToolStripMenuItem_Click(object sender, EventArgs e)
