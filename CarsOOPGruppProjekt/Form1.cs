@@ -95,7 +95,7 @@ namespace CarsOOPGruppProjekt
         private void btnEdit_Click(object sender, EventArgs e)
         {
             Cars carsedit = getSelectedDataGridViewCar();
-            cmbManufacurers.SelectedItem = carsedit.manufacturer;
+            cmbManufacurers.SelectedItem = carsedit.Manufacturer;
             txtModel.Text = carsedit.Model;
             txtYear.Text = carsedit.Year;
             cmbRetailers.SelectedItem = carsedit.Retailer;
@@ -115,12 +115,13 @@ namespace CarsOOPGruppProjekt
                 
                 dataRow = dataGridView1.SelectedCells[0].OwningRow;
                 dataGridView1.SelectedCells[0].OwningRow.Selected = true;
+                //int id, string model, string manufacturer, string year,string retailer, int price
                 Cars car = new Cars(
                 Convert.ToInt32(dataRow.Cells[0].Value.ToString()),
                 dataRow.Cells[2].Value.ToString(),
                 dataRow.Cells[1].Value.ToString(),
-                dataRow.Cells[4].Value.ToString(),
                 dataRow.Cells[3].Value.ToString(),
+                dataRow.Cells[4].Value.ToString(),
                 Convert.ToInt32(dataRow.Cells[5].Value.ToString()));
                 return car;
             }
@@ -130,10 +131,6 @@ namespace CarsOOPGruppProjekt
                     0, "Default", "Default", "Default", "Default", 0);
                 return car;
             }
-
-            
-
-            
         }
         private void btnRemove_Click(object sender, EventArgs e)
 
