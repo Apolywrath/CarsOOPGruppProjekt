@@ -91,27 +91,23 @@ namespace CarsOOPGruppProjekt
                 return car;
         }
         private void btnRemove_Click(object sender, EventArgs e)
+
+            
+            // Delete selected car from the database.
         {
-            /*
-            // Get the collection of selected rows
-            
-            DataGridViewSelectedRowCollection rows = dataGridView1.SelectedRows;
+            Cars carsedit = getSelectedDataGridViewCar();
+            cmbManufacurers.SelectedItem = carsedit.manufacturer;
+            txtModel.Text = carsedit.Model;
+            txtYear.Text = carsedit.Year;
+            cmbRetailers.SelectedItem = carsedit.Retailer;
+            txtPrice.Text = carsedit.Price.ToString();
 
-            // Loop through the colleciton of rows
-            foreach (DataGridViewRow row in rows)
-            
-            {
-                //Get the DataRowView object for the current row
+            string strSql = $"CALL deleteCar('{carsedit.id}')";
 
-                DataRowView rowView = row.DataBoundItem as DataRowView;
-
-                // Delete the record corresponding to the current row
-
-                rowView.Delete();
-                    
-            }
-            */
+            sqlConn.DeleteCar(strSql);
         }
+         
+        
 
         private void btnView_Click(object sender, EventArgs e)
         {
