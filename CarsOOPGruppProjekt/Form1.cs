@@ -87,7 +87,9 @@ namespace CarsOOPGruppProjekt
             DataGridViewRow dataRow;
             if (dataGridView1.SelectedCells.Count > 0)
             {
+                
                 dataRow = dataGridView1.SelectedCells[0].OwningRow;
+                dataGridView1.SelectedCells[0].OwningRow.Selected = true;
                 Cars car = new Cars(
                 Convert.ToInt32(dataRow.Cells[0].Value.ToString()),
                 dataRow.Cells[2].Value.ToString(),
@@ -189,6 +191,8 @@ namespace CarsOOPGruppProjekt
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            // Väljer hela raden istället för just cellen man klickar på
+            if(dataGridView1.SelectedCells.Count > 0)dataGridView1.SelectedCells[0].OwningRow.Selected = true;
             //Hämtar data från datagrid och representerar värden till text-&comboboxes
             //try/catch hanterar situationer då index är outofbounds
             /*
