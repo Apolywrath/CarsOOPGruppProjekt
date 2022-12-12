@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cars.cs" />
+    <Compile Include="GeneratedData.cs" />
     <Compile Include="Retailer.cs" />
     <Compile Include="Manufacturer.cs" />
     <Compile Include="EditCars.cs" />

@@ -17,6 +17,7 @@ namespace CarsOOPGruppProjekt
         {
             InitializeComponent();
             InitializeGUI();
+            List<Cars> cars = GeneratedData.generatedCars(10);
         }
         private void InitializeGUI()
         {
@@ -121,7 +122,7 @@ namespace CarsOOPGruppProjekt
                 dgvr.Cells[5].Value = car.Price;
                 dataGridView1.Rows.Add(dgvr);
             }
-            string id = dataGridView1.Rows[0].Cells[0].Value.ToString();
+            
         }
 
         private void searchtxtbox_TextChanged(object sender, EventArgs e)
