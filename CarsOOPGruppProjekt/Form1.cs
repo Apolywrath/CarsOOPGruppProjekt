@@ -34,6 +34,7 @@ namespace CarsOOPGruppProjekt
                 cmbRetailers.Items.Add(retailer.Name);
             }
 
+            FillList();
             UpdateGUI();
         }
 
@@ -48,6 +49,26 @@ namespace CarsOOPGruppProjekt
             txtPrice.Text = "0";
             txtYear.Text = "xxxx";
             txtId.Text = "";
+        }
+
+        private void FillList() 
+        {
+            List<Cars> cars = sqlConn.getData();
+            dataGridView1.Rows.Clear();
+            foreach (var car in cars)
+            {
+                //DataGridViewRow = en rad i datagridview t.ex. en rad i Excel.
+                DataGridViewRow dgvr = new DataGridViewRow();
+                //Fungerar lite som i ett excel dokument. Cell[0] = id som är gömd men kan användas av oss.
+                dgvr.CreateCells(dataGridView1);
+                dgvr.Cells[0].Value = car.id;
+                dgvr.Cells[1].Value = car.manufacturer;
+                dgvr.Cells[2].Value = car.Model;
+                dgvr.Cells[3].Value = car.Year;
+                dgvr.Cells[4].Value = car.Retailer;
+                dgvr.Cells[5].Value = car.Price;
+                dataGridView1.Rows.Add(dgvr);
+            }
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -133,7 +154,7 @@ namespace CarsOOPGruppProjekt
 
         private void btnView_Click(object sender, EventArgs e)
         {
-            List<Cars> cars = sqlConn.getData();
+            /*List<Cars> cars = sqlConn.getData();
             dataGridView1.Rows.Clear();
             foreach (var car in cars)
             {
@@ -148,7 +169,7 @@ namespace CarsOOPGruppProjekt
                 dgvr.Cells[4].Value = car.Retailer;
                 dgvr.Cells[5].Value = car.Price;
                 dataGridView1.Rows.Add(dgvr);
-            }
+            }*/
             
         }
 
