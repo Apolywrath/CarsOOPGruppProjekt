@@ -41,6 +41,7 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.grbEdit = new System.Windows.Forms.GroupBox();
+            this.btnApply = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
@@ -50,7 +51,6 @@
             this.cmbManufacurers = new System.Windows.Forms.ComboBox();
             this.searchtxtbox = new System.Windows.Forms.TextBox();
             this.searchcmbBox = new System.Windows.Forms.ComboBox();
-            this.btnApply = new System.Windows.Forms.Button();
             this.grbList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grbEdit.SuspendLayout();
@@ -195,6 +195,17 @@
             this.grbEdit.TabStop = false;
             this.grbEdit.Text = "Add/Edit/Remove";
             // 
+            // btnApply
+            // 
+            this.btnApply.Enabled = false;
+            this.btnApply.Location = new System.Drawing.Point(7, 181);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.Size = new System.Drawing.Size(75, 23);
+            this.btnApply.TabIndex = 9;
+            this.btnApply.Text = "Apply";
+            this.btnApply.UseVisualStyleBackColor = true;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
+            // 
             // btnCancel
             // 
             this.btnCancel.Enabled = false;
@@ -278,16 +289,6 @@
             this.searchcmbBox.TabIndex = 8;
             this.searchcmbBox.Text = "Model";
             this.searchcmbBox.SelectedIndexChanged += new System.EventHandler(this.searchcmbBox_SelectedIndexChanged);
-            // 
-            // btnApply
-            // 
-            this.btnApply.Location = new System.Drawing.Point(7, 181);
-            this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(75, 23);
-            this.btnApply.TabIndex = 9;
-            this.btnApply.Text = "Apply";
-            this.btnApply.UseVisualStyleBackColor = true;
-            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
             // Form1
             // 
