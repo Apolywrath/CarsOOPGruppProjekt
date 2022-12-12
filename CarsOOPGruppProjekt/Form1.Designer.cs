@@ -201,6 +201,17 @@
             // 
             // btnApply
             // 
+            this.btnApply.Enabled = false;
+            this.btnApply.Location = new System.Drawing.Point(7, 181);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.Size = new System.Drawing.Size(75, 23);
+            this.btnApply.TabIndex = 9;
+            this.btnApply.Text = "Apply";
+            this.btnApply.UseVisualStyleBackColor = true;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
+            // 
+            // btnApply
+            // 
             this.btnApply.Location = new System.Drawing.Point(7, 181);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(75, 23);
