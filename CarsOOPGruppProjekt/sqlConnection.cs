@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
@@ -166,6 +167,18 @@ namespace CarsOOPGruppProjekt
             }
 
             return null;
+        }
+
+
+        //Lägger till ny bil till database
+        public void AddCar(string sqlQuery)
+        {
+            MySqlCommand cmd = new MySqlCommand(sqlQuery, _mysqlCon);
+            _mysqlCon.Open();
+
+            cmd.ExecuteReader();
+
+            _mysqlCon.Close();
         }
 
 
