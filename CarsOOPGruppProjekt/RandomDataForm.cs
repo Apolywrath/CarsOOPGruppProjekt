@@ -19,18 +19,25 @@ namespace CarsOOPGruppProjekt
 
         private void btnApply_Click(object sender, EventArgs e)
         {
+            // Kollar om txtboxCount inte är tom
             if(txtboxCount.TextLength > 0)
             {
+
+                // Försöker Parse, annars händer inget. De får skylla sig själv om de inte skriver in en siffra
                 int result = 0;
                 Int32.TryParse(txtboxCount.Text, out result);
+                //Hämtar en lista med bilar ifrån GeneratedData Class
                 List<Cars> cars = GeneratedData.generatedCars(result);
+                // Ny Connection till mysql
                 sqlConnection sqlconn = new sqlConnection();
+                // För varje bil som genererades så lägg till det i databasen
                 foreach(Cars car in cars)
                 {
                     string strSql = $"CALL addCar('{car.model}','{car.manufacturer}','{car.year}','{car.retailer}','{car.price}')";
                     sqlconn.AddCar(strSql);
                 }
             }
+            //Göm Formen igen
             this.Hide();
         }
     }
