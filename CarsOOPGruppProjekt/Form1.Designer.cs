@@ -41,6 +41,7 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.grbEdit = new System.Windows.Forms.GroupBox();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtYear = new System.Windows.Forms.TextBox();
@@ -49,7 +50,7 @@
             this.cmbManufacurers = new System.Windows.Forms.ComboBox();
             this.searchtxtbox = new System.Windows.Forms.TextBox();
             this.searchcmbBox = new System.Windows.Forms.ComboBox();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnApply = new System.Windows.Forms.Button();
             this.grbList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grbEdit.SuspendLayout();
@@ -176,6 +177,7 @@
             // 
             // grbEdit
             // 
+            this.grbEdit.Controls.Add(this.btnApply);
             this.grbEdit.Controls.Add(this.btnCancel);
             this.grbEdit.Controls.Add(this.txtId);
             this.grbEdit.Controls.Add(this.txtPrice);
@@ -192,6 +194,17 @@
             this.grbEdit.TabIndex = 5;
             this.grbEdit.TabStop = false;
             this.grbEdit.Text = "Add/Edit/Remove";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Enabled = false;
+            this.btnCancel.Location = new System.Drawing.Point(87, 182);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 8;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // txtId
             // 
@@ -266,16 +279,15 @@
             this.searchcmbBox.Text = "Model";
             this.searchcmbBox.SelectedIndexChanged += new System.EventHandler(this.searchcmbBox_SelectedIndexChanged);
             // 
-            // btnCancel
+            // btnApply
             // 
-            this.btnCancel.Enabled = false;
-            this.btnCancel.Location = new System.Drawing.Point(87, 182);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 8;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnApply.Location = new System.Drawing.Point(7, 181);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.Size = new System.Drawing.Size(75, 23);
+            this.btnApply.TabIndex = 9;
+            this.btnApply.Text = "Apply";
+            this.btnApply.UseVisualStyleBackColor = true;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
             // Form1
             // 
@@ -323,6 +335,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnApply;
     }
 }
 
