@@ -109,7 +109,9 @@ namespace CarsOOPGruppProjekt
             DataGridViewRow dataRow;
             if (dataGridView1.SelectedCells.Count > 0)
             {
+                
                 dataRow = dataGridView1.SelectedCells[0].OwningRow;
+                dataGridView1.SelectedCells[0].OwningRow.Selected = true;
                 Cars car = new Cars(
                 Convert.ToInt32(dataRow.Cells[0].Value.ToString()),
                 dataRow.Cells[2].Value.ToString(),
@@ -211,6 +213,8 @@ namespace CarsOOPGruppProjekt
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            // Väljer hela raden istället för just cellen man klickar på
+            if(dataGridView1.SelectedCells.Count > 0)dataGridView1.SelectedCells[0].OwningRow.Selected = true;
             //Hämtar data från datagrid och representerar värden till text-&comboboxes
             //try/catch hanterar situationer då index är outofbounds
             /*
@@ -253,8 +257,9 @@ namespace CarsOOPGruppProjekt
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            //string queryedit = String.Format("UPDATE cars SET manufacturers_manufacturers_name = '{0}', cars_model = '{1}', cars_year = '{2}', retailers_retailers_name = '{3}', cars_price = '{4}' WHERE cars_id = '{5}'", cmbManufacurers.SelectedItem, txtModel.Text, txtYear.Text, cmbRetailers.SelectedItem, txtPrice.Text, carsedit.id);
-            //sqlConn.updateSqlData(queryedit);
+            Cars carsedit = getSelectedDataGridViewCar();
+            string queryedit = String.Format("UPDATE cars SET manufacturers_manufacturers_name = '{0}', cars_model = '{1}', cars_year = '{2}', retailers_retailers_name = '{3}', cars_price = '{4}' WHERE cars_id = '{5}'", cmbManufacurers.SelectedItem, (txtModel.Text), Convert.ToInt32(txtYear.Text), cmbRetailers.SelectedItem, Convert.ToInt32(txtPrice.Text), carsedit.id);
+            sqlConn.updateSqlData(queryedit);
             btnApply.Enabled = false;
             btnCancel.Enabled = false;
         }
