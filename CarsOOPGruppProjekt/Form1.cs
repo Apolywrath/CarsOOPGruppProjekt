@@ -87,6 +87,7 @@ namespace CarsOOPGruppProjekt
             string strSql = $"CALL addCar('{strModel}','{strName}','{intYear}','{strRetail}','{intPrice}')";
 
             sqlConn.AddCar(strSql);
+            FillList();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
