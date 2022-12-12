@@ -229,6 +229,7 @@ namespace CarsOOPGruppProjekt
             UpdateGUI();
             btnCancel.Enabled = false;
             btnAdd.Enabled = true;
+            btnApply.Enabled = false;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
