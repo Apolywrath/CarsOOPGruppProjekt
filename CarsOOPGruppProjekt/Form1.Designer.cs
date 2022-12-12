@@ -54,10 +54,13 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.carsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.randomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnLogo = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grbList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grbEdit.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // grbList
@@ -181,6 +184,7 @@
             // 
             // grbEdit
             // 
+            this.grbEdit.Controls.Add(this.btnLogo);
             this.grbEdit.Controls.Add(this.btnApply);
             this.grbEdit.Controls.Add(this.btnCancel);
             this.grbEdit.Controls.Add(this.txtId);
@@ -319,11 +323,30 @@
             this.randomToolStripMenuItem.Text = "Random";
             this.randomToolStripMenuItem.Click += new System.EventHandler(this.randomToolStripMenuItem_Click);
             // 
+            // btnLogo
+            // 
+            this.btnLogo.Location = new System.Drawing.Point(7, 147);
+            this.btnLogo.Name = "btnLogo";
+            this.btnLogo.Size = new System.Drawing.Size(75, 23);
+            this.btnLogo.TabIndex = 9;
+            this.btnLogo.Text = "View Logo";
+            this.btnLogo.UseVisualStyleBackColor = true;
+            this.btnLogo.Click += new System.EventHandler(this.btnLogo_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(39, 31);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(294, 169);
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(653, 682);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.searchcmbBox);
             this.Controls.Add(this.searchtxtbox);
@@ -339,6 +362,7 @@
             this.grbEdit.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -372,6 +396,8 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem carsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem randomToolStripMenuItem;
+        private System.Windows.Forms.Button btnLogo;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -252,6 +254,26 @@ namespace CarsOOPGruppProjekt
             randDForm.Width = this.Width;
             randDForm.Height = this.Height;
             randDForm.Location = this.Location;
+        }
+
+        private void btnLogo_Click(object sender, EventArgs e)
+        {
+            //Create a new WebClient object
+            WebClient client = new WebClient();
+
+            //Download the image data as a byte array
+
+            byte[] imageData = client.DownloadData("https://www.carlogos.org/car-logos/toyota-logo.png");
+
+            //Create a MemoryStream from the image data
+            MemoryStream stream = new MemoryStream(imageData);
+
+            //Create an image object from the MemoryStream
+            Image carLogo = Image.FromStream(stream);
+
+            //Display the image on the pictureBox control
+            pictureBox1.Image = carLogo;
+
         }
     }
 }
