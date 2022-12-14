@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.ServiceProcess;
 using MySqlX.XDevAPI;
+using System.Drawing;
 
 namespace CarsOOPGruppProjekt
 {
@@ -29,8 +30,9 @@ namespace CarsOOPGruppProjekt
         {
 
             try
-            { 
-            _mysqlCon.Open();
+            {
+                sqlOpen();
+                sqlClose();
             }
             catch(Exception ex)
             {
@@ -48,14 +50,29 @@ namespace CarsOOPGruppProjekt
             return ServiceController.GetServices().Any(serviceController => serviceController.ServiceName.Equals(ServiceName));
         }
 
+        public void sqlOpen()
+        {
+            if(_mysqlCon.State == System.Data.ConnectionState.Open) { return; }
+            else { _mysqlCon.Open(); }
+        }
+        public void sqlClose()
+        {
+            if (_mysqlCon.State == System.Data.ConnectionState.Closed) { return; }
+            else { _mysqlCon.Close(); }
+        }
+
 
         //Function som startar MySQL80 om den är nedstängd
         public void startService(string ServiceName)
         {
             ServiceController sc = new ServiceController();
             sc.ServiceName= ServiceName;
+            if(_mysqlCon.State == System.Data.ConnectionState.Open)
+            {
 
-            if(sc.Status == ServiceControllerStatus.Stopped)
+            }
+
+            if (sc.Status == ServiceControllerStatus.Stopped)
             {
                 try
                 {
@@ -233,9 +250,11 @@ namespace CarsOOPGruppProjekt
                 _mysqlCon.Open();
                 cmd.ExecuteReader();
                 _mysqlCon.Close();
+                
             }
             catch
             {
+                _mysqlCon.Close();
                 //Ingenting händer
             }
         }
