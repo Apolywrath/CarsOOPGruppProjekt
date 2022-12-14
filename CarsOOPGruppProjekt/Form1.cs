@@ -165,8 +165,8 @@ namespace CarsOOPGruppProjekt
                 dgvr.Cells[0].Value = car.Id;
                 dgvr.Cells[1].Value = car.manufacturer;
                 dgvr.Cells[2].Value = car.Model;
-                dgvr.Cells[3].Value = car.Year;
-                dgvr.Cells[4].Value = car.Retailer;
+                dgvr.Cells[4].Value = car.Year;
+                dgvr.Cells[3].Value = car.Retailer;
                 dgvr.Cells[5].Value = car.Price;
                 dataGridView1.Rows.Add(dgvr);
             }
