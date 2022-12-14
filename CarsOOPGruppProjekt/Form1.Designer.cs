@@ -214,16 +214,6 @@
             this.btnLogo.UseVisualStyleBackColor = true;
             this.btnLogo.Click += new System.EventHandler(this.btnLogo_Click);
             // 
-            // btnLogo
-            // 
-            this.btnLogo.Location = new System.Drawing.Point(7, 147);
-            this.btnLogo.Name = "btnLogo";
-            this.btnLogo.Size = new System.Drawing.Size(75, 23);
-            this.btnLogo.TabIndex = 9;
-            this.btnLogo.Text = "View Logo";
-            this.btnLogo.UseVisualStyleBackColor = true;
-            this.btnLogo.Click += new System.EventHandler(this.btnLogo_Click);
-            // 
             // btnApply
             // 
             this.btnApply.Enabled = false;
@@ -312,7 +302,6 @@
             "Year",
             "Price"});
             this.searchcmbBox.Location = new System.Drawing.Point(145, 265);
-            this.searchcmbBox.Location = new System.Drawing.Point(114, 237);
             this.searchcmbBox.Margin = new System.Windows.Forms.Padding(2);
             this.searchcmbBox.Name = "searchcmbBox";
             this.searchcmbBox.Size = new System.Drawing.Size(92, 21);
