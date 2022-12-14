@@ -36,6 +36,11 @@ namespace CarsOOPGruppProjekt
                 cmbRetailers.Items.Add(retailer.Name);
             }
 
+            searchcmbBox.Items.Add("Model");
+            searchcmbBox.Items.Add("Year");
+            searchcmbBox.Items.Add("Price");
+            searchcmbBox.SelectedIndex= 0;
+
             FillList();
             UpdateGUI();
         }
@@ -103,7 +108,6 @@ namespace CarsOOPGruppProjekt
             txtId.Text = carsedit.Id.ToString();
             btnApply.Enabled = true;
             btnCancel.Enabled = true;
-            FillList();
         }
 
         // Get current selected Row Data from dataGridView1 for easier handling.
@@ -115,6 +119,7 @@ namespace CarsOOPGruppProjekt
                 dataRow = dataGridView1.SelectedCells[0].OwningRow;
                 dataGridView1.SelectedCells[0].OwningRow.Selected = true;
                 //int id, string model, string manufacturer, string year,string retailer, int price
+                //dataGridView1.SelectedCells[0].OwningRow.Selected = true;
                 Cars car = new Cars(
                 Convert.ToInt32(dataRow.Cells[0].Value.ToString()),
                 dataRow.Cells[2].Value.ToString(),

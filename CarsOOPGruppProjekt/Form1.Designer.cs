@@ -214,6 +214,16 @@
             this.btnLogo.UseVisualStyleBackColor = true;
             this.btnLogo.Click += new System.EventHandler(this.btnLogo_Click);
             // 
+            // btnLogo
+            // 
+            this.btnLogo.Location = new System.Drawing.Point(7, 147);
+            this.btnLogo.Name = "btnLogo";
+            this.btnLogo.Size = new System.Drawing.Size(75, 23);
+            this.btnLogo.TabIndex = 9;
+            this.btnLogo.Text = "View Logo";
+            this.btnLogo.UseVisualStyleBackColor = true;
+            this.btnLogo.Click += new System.EventHandler(this.btnLogo_Click);
+            // 
             // btnApply
             // 
             this.btnApply.Enabled = false;
@@ -295,18 +305,18 @@
             // 
             // searchcmbBox
             // 
-            this.searchcmbBox.DisplayMember = "Model";
+            this.searchcmbBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.searchcmbBox.FormattingEnabled = true;
             this.searchcmbBox.Items.AddRange(new object[] {
             "Model",
             "Year",
             "Price"});
             this.searchcmbBox.Location = new System.Drawing.Point(145, 265);
+            this.searchcmbBox.Location = new System.Drawing.Point(114, 237);
             this.searchcmbBox.Margin = new System.Windows.Forms.Padding(2);
             this.searchcmbBox.Name = "searchcmbBox";
             this.searchcmbBox.Size = new System.Drawing.Size(92, 21);
             this.searchcmbBox.TabIndex = 8;
-            this.searchcmbBox.Text = "Model";
             this.searchcmbBox.SelectedIndexChanged += new System.EventHandler(this.searchcmbBox_SelectedIndexChanged);
             // 
             // menuStrip1
