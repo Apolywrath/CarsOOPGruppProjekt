@@ -40,10 +40,6 @@ namespace CarsOOPGruppProjekt
             {
                 cmbRetailers.Items.Add(retailer.Name);
             }
-
-            searchcmbBox.Items.Add("Model");
-            searchcmbBox.Items.Add("Year");
-            searchcmbBox.Items.Add("Price");
             searchcmbBox.SelectedIndex= 0;
 
             FillList();
