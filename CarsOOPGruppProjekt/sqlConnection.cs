@@ -173,12 +173,17 @@ namespace CarsOOPGruppProjekt
         //Lägger till ny bil till database
         public void AddCar(string sqlQuery)
         {
-            MySqlCommand cmd = new MySqlCommand(sqlQuery, _mysqlCon);
-            _mysqlCon.Open();
-
-            cmd.ExecuteReader();
-
-            _mysqlCon.Close();
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(sqlQuery, _mysqlCon);
+                _mysqlCon.Open();
+                cmd.ExecuteReader();
+                _mysqlCon.Close();
+            }
+            catch
+            {
+                //Ingenting händer
+            }
         }
 
 

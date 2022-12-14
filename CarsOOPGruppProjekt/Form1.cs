@@ -36,6 +36,11 @@ namespace CarsOOPGruppProjekt
                 cmbRetailers.Items.Add(retailer.Name);
             }
 
+            searchcmbBox.Items.Add("Model");
+            searchcmbBox.Items.Add("Year");
+            searchcmbBox.Items.Add("Price");
+            searchcmbBox.SelectedIndex= 0;
+
             FillList();
             UpdateGUI();
         }
@@ -103,7 +108,6 @@ namespace CarsOOPGruppProjekt
             txtId.Text = carsedit.Id.ToString();
             btnApply.Enabled = true;
             btnCancel.Enabled = true;
-            FillList();
         }
 
         // Get current selected Row Data from dataGridView1 for easier handling.
@@ -112,10 +116,10 @@ namespace CarsOOPGruppProjekt
             DataGridViewRow dataRow;
             if (dataGridView1.SelectedCells.Count > 0)
             {
-                
                 dataRow = dataGridView1.SelectedCells[0].OwningRow;
                 dataGridView1.SelectedCells[0].OwningRow.Selected = true;
                 //int id, string model, string manufacturer, string year,string retailer, int price
+                //dataGridView1.SelectedCells[0].OwningRow.Selected = true;
                 Cars car = new Cars(
                 Convert.ToInt32(dataRow.Cells[0].Value.ToString()),
                 dataRow.Cells[2].Value.ToString(),
@@ -132,11 +136,9 @@ namespace CarsOOPGruppProjekt
                 return car;
             }
         }
-        private void btnRemove_Click(object sender, EventArgs e)
-
-            
-            // Delete selected car from the database.
+        private void btnRemove_Click(object sender, EventArgs e) 
         {
+            // Delete selected car from the database.
             Cars carsedit = getSelectedDataGridViewCar();
             cmbManufacurers.SelectedItem = carsedit.manufacturer;
             txtModel.Text = carsedit.Model;
@@ -148,9 +150,7 @@ namespace CarsOOPGruppProjekt
 
             sqlConn.DeleteCar(strSql);
             FillList();
-        }
-         
-        
+        }   
 
         private void btnView_Click(object sender, EventArgs e)
         {
@@ -170,8 +170,8 @@ namespace CarsOOPGruppProjekt
                 dgvr.Cells[0].Value = car.Id;
                 dgvr.Cells[1].Value = car.manufacturer;
                 dgvr.Cells[2].Value = car.Model;
-                dgvr.Cells[3].Value = car.Year;
-                dgvr.Cells[4].Value = car.Retailer;
+                dgvr.Cells[4].Value = car.Year;
+                dgvr.Cells[3].Value = car.Retailer;
                 dgvr.Cells[5].Value = car.Price;
                 dataGridView1.Rows.Add(dgvr);
             }
@@ -196,7 +196,7 @@ namespace CarsOOPGruppProjekt
         {
             // Väljer hela raden istället för just cellen man klickar på
             if(dataGridView1.SelectedCells.Count > 0)dataGridView1.SelectedCells[0].OwningRow.Selected = true;
-            //Hämtar data från datagrid och representerar värden till text-&comboboxes
+            //Autofill: Hämtar data från datagrid och representerar värden till text-&comboboxes
             //try/catch hanterar situationer då index är outofbounds
             /*
             try
@@ -229,6 +229,7 @@ namespace CarsOOPGruppProjekt
             UpdateGUI();
             btnCancel.Enabled = false;
             btnAdd.Enabled = true;
+            btnApply.Enabled = false;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -238,8 +239,17 @@ namespace CarsOOPGruppProjekt
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            Cars carsedit = getSelectedDataGridViewCar();
-            string queryedit = String.Format("UPDATE cars SET manufacturers_manufacturers_name = '{0}', cars_model = '{1}', cars_year = '{2}', retailers_retailers_name = '{3}', cars_price = '{4}' WHERE cars_id = '{5}'", cmbManufacurers.SelectedItem, (txtModel.Text), Convert.ToInt32(txtYear.Text), cmbRetailers.SelectedItem, Convert.ToInt32(txtPrice.Text), carsedit.id);
+            string queryedit = String.Format(
+                "UPDATE cars SET manufacturers_manufacturers_name = '{0}'," +
+                " cars_model = '{1}', cars_year = '{2}'," +
+                " retailers_retailers_name = '{3}'," +
+                " cars_price = '{4}' WHERE cars_id = '{5}'",
+                cmbManufacurers.SelectedItem,
+                txtModel.Text,
+                Convert.ToInt32(txtYear.Text),
+                cmbRetailers.SelectedItem,
+                Convert.ToInt32(txtPrice.Text),
+                Convert.ToInt32(txtId.Text));
             sqlConn.updateSqlData(queryedit);
             btnApply.Enabled = false;
             btnCancel.Enabled = false;
@@ -248,7 +258,6 @@ namespace CarsOOPGruppProjekt
 
         private void randomToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
             randDForm.Show();
             randDForm.Width = this.Width;
             randDForm.Height = this.Height;
