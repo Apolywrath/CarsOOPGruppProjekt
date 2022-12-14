@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.ServiceProcess;
+using MySqlX.XDevAPI;
 
 namespace CarsOOPGruppProjekt
 {
@@ -20,6 +22,58 @@ namespace CarsOOPGruppProjekt
             //Kör functionen mysqlCon som sedan deklareras _mysqlCon
             _mysqlCon = mysqlCon();
         }
+
+
+        //Måste köra VisualStudio som Admin för att det ska fungera.
+        public void testMysql()
+        {
+
+            try
+            { 
+            _mysqlCon.Open();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Can not open connection ! ");
+                if(serviceExists("MySQL80"))
+                {
+                    startService("MySQL80");
+                }
+            }
+        }
+
+        // Bool för att se om Servicen MySQL80 finns
+        public bool serviceExists(string ServiceName)
+        {
+            return ServiceController.GetServices().Any(serviceController => serviceController.ServiceName.Equals(ServiceName));
+        }
+
+
+        //Function som startar MySQL80 om den är nedstängd
+        public void startService(string ServiceName)
+        {
+            ServiceController sc = new ServiceController();
+            sc.ServiceName= ServiceName;
+
+            if(sc.Status == ServiceControllerStatus.Stopped)
+            {
+                try
+                {
+                    sc.Start();
+                    sc.WaitForStatus(ServiceControllerStatus.Running);
+                }
+                catch(InvalidOperationException e)
+                {
+
+                }
+            }
+            else
+            {
+                // Service is Already Running
+            }
+        }
+
+
         private MySql.Data.MySqlClient.MySqlConnection mysqlCon()
         {
 

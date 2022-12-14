@@ -19,7 +19,12 @@ namespace CarsOOPGruppProjekt
         public Form1()
         {
             InitializeComponent();
+            isMysqlRunning();
             InitializeGUI();
+        }
+        private void isMysqlRunning()
+        {
+            sqlConn.testMysql();
         }
         private void InitializeGUI()
         {
@@ -35,10 +40,6 @@ namespace CarsOOPGruppProjekt
             {
                 cmbRetailers.Items.Add(retailer.Name);
             }
-
-            searchcmbBox.Items.Add("Model");
-            searchcmbBox.Items.Add("Year");
-            searchcmbBox.Items.Add("Price");
             searchcmbBox.SelectedIndex= 0;
 
             FillList();
