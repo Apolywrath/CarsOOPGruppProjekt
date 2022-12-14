@@ -32,7 +32,7 @@ namespace CarsOOPGruppProjekt
             try
             {
                 sqlOpen();
-                sqlClose();
+                
             }
             catch(Exception ex)
             {
@@ -42,6 +42,7 @@ namespace CarsOOPGruppProjekt
                     startService("MySQL80");
                 }
             }
+            sqlClose();
         }
 
         // Bool för att se om Servicen MySQL80 finns

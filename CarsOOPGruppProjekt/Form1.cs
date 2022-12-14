@@ -190,13 +190,24 @@ namespace CarsOOPGruppProjekt
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             // Väljer hela raden istället för just cellen man klickar på
             if(dataGridView1.SelectedCells.Count > 0)dataGridView1.SelectedCells[0].OwningRow.Selected = true;
+
+
+            string car = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            switch(car)
+            {
+                case "Audi":
+                    pictureBox1.Image = CarLogos.audiLogo;break;
+                case "Ford":
+                    pictureBox1.Image = CarLogos.fordLogo;break;
+            }
+
             //Autofill: Hämtar data från datagrid och representerar värden till text-&comboboxes
             //try/catch hanterar situationer då index är outofbounds
             /*
