@@ -41,6 +41,7 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.grbEdit = new System.Windows.Forms.GroupBox();
+            this.btnLogo = new System.Windows.Forms.Button();
             this.btnApply = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.txtId = new System.Windows.Forms.TextBox();
@@ -54,7 +55,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.carsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.randomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnLogo = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grbList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -203,6 +203,16 @@
             this.grbEdit.TabStop = false;
             this.grbEdit.Text = "Add/Edit/Remove";
             // 
+            // btnLogo
+            // 
+            this.btnLogo.Location = new System.Drawing.Point(7, 147);
+            this.btnLogo.Name = "btnLogo";
+            this.btnLogo.Size = new System.Drawing.Size(75, 23);
+            this.btnLogo.TabIndex = 9;
+            this.btnLogo.Text = "View Logo";
+            this.btnLogo.UseVisualStyleBackColor = true;
+            this.btnLogo.Click += new System.EventHandler(this.btnLogo_Click);
+            // 
             // btnApply
             // 
             this.btnApply.Enabled = false;
@@ -284,18 +294,13 @@
             // 
             // searchcmbBox
             // 
-            this.searchcmbBox.DisplayMember = "Model";
+            this.searchcmbBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.searchcmbBox.FormattingEnabled = true;
-            this.searchcmbBox.Items.AddRange(new object[] {
-            "Model",
-            "Year",
-            "Price"});
             this.searchcmbBox.Location = new System.Drawing.Point(114, 237);
             this.searchcmbBox.Margin = new System.Windows.Forms.Padding(2);
             this.searchcmbBox.Name = "searchcmbBox";
             this.searchcmbBox.Size = new System.Drawing.Size(92, 21);
             this.searchcmbBox.TabIndex = 8;
-            this.searchcmbBox.Text = "Model";
             this.searchcmbBox.SelectedIndexChanged += new System.EventHandler(this.searchcmbBox_SelectedIndexChanged);
             // 
             // menuStrip1
@@ -322,16 +327,6 @@
             this.randomToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.randomToolStripMenuItem.Text = "Random";
             this.randomToolStripMenuItem.Click += new System.EventHandler(this.randomToolStripMenuItem_Click);
-            // 
-            // btnLogo
-            // 
-            this.btnLogo.Location = new System.Drawing.Point(7, 147);
-            this.btnLogo.Name = "btnLogo";
-            this.btnLogo.Size = new System.Drawing.Size(75, 23);
-            this.btnLogo.TabIndex = 9;
-            this.btnLogo.Text = "View Logo";
-            this.btnLogo.UseVisualStyleBackColor = true;
-            this.btnLogo.Click += new System.EventHandler(this.btnLogo_Click);
             // 
             // pictureBox1
             // 
