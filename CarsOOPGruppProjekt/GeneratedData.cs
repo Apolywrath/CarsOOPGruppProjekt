@@ -29,11 +29,11 @@ namespace CarsOOPGruppProjekt
 
             //Runs as many times the user inputs
             for(int count = 0; count < howMany; count++)
-            { 
-                //Get a manufacutrer between 0 and manf.count-1.... -1 is only because count doesn't start at 0
-            string manfuString = manf[rand.Next(1, manf.Count)-1].Name;
+            {
+                //Get a manufacutrer between 0 and manf.count-1.... -1 is only because count doesn't start at 0              
+            string manfuString = manf[(rand.Next(1, 1000) % (manf.Count))].Name;
                 //Get a retailer between 0 and retailers.count-1 
-            string retailersString = retailers[rand.Next(1, retailers.Count)-1].Name;
+            string retailersString = retailers[(rand.Next(1, 1000) % (retailers.Count))].Name;
                 // Gets a random year between 1960 and 2022
             int year = rand.Next(1960, 2022);
                 // Gets a random price between 50000 and 500000 and makes it looks more clean like 250000 instead of 254564
