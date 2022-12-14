@@ -19,7 +19,12 @@ namespace CarsOOPGruppProjekt
         public Form1()
         {
             InitializeComponent();
+            isMysqlRunning();
             InitializeGUI();
+        }
+        private void isMysqlRunning()
+        {
+            sqlConn.testMysql();
         }
         private void InitializeGUI()
         {
