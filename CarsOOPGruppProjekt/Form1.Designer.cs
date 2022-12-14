@@ -66,9 +66,10 @@
             // grbList
             // 
             this.grbList.Controls.Add(this.dataGridView1);
-            this.grbList.Location = new System.Drawing.Point(12, 270);
+            this.grbList.Controls.Add(this.btnView);
+            this.grbList.Location = new System.Drawing.Point(12, 297);
             this.grbList.Name = "grbList";
-            this.grbList.Size = new System.Drawing.Size(629, 430);
+            this.grbList.Size = new System.Drawing.Size(629, 348);
             this.grbList.TabIndex = 0;
             this.grbList.TabStop = false;
             this.grbList.Text = "Car List";
@@ -144,7 +145,7 @@
             // 
             // btnView
             // 
-            this.btnView.Location = new System.Drawing.Point(18, 235);
+            this.btnView.Location = new System.Drawing.Point(546, 315);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(75, 23);
             this.btnView.TabIndex = 1;
@@ -196,12 +197,22 @@
             this.grbEdit.Controls.Add(this.btnRemove);
             this.grbEdit.Controls.Add(this.btnAdd);
             this.grbEdit.Controls.Add(this.btnEdit);
-            this.grbEdit.Location = new System.Drawing.Point(391, 12);
+            this.grbEdit.Location = new System.Drawing.Point(391, 40);
             this.grbEdit.Name = "grbEdit";
             this.grbEdit.Size = new System.Drawing.Size(250, 252);
             this.grbEdit.TabIndex = 5;
             this.grbEdit.TabStop = false;
             this.grbEdit.Text = "Add/Edit/Remove";
+            // 
+            // btnLogo
+            // 
+            this.btnLogo.Location = new System.Drawing.Point(6, 19);
+            this.btnLogo.Name = "btnLogo";
+            this.btnLogo.Size = new System.Drawing.Size(75, 23);
+            this.btnLogo.TabIndex = 9;
+            this.btnLogo.Text = "View Logo";
+            this.btnLogo.UseVisualStyleBackColor = true;
+            this.btnLogo.Click += new System.EventHandler(this.btnLogo_Click);
             // 
             // btnLogo
             // 
@@ -216,7 +227,7 @@
             // btnApply
             // 
             this.btnApply.Enabled = false;
-            this.btnApply.Location = new System.Drawing.Point(7, 181);
+            this.btnApply.Location = new System.Drawing.Point(86, 181);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(75, 23);
             this.btnApply.TabIndex = 9;
@@ -227,7 +238,7 @@
             // btnCancel
             // 
             this.btnCancel.Enabled = false;
-            this.btnCancel.Location = new System.Drawing.Point(87, 182);
+            this.btnCancel.Location = new System.Drawing.Point(167, 181);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 8;
@@ -286,7 +297,7 @@
             // 
             // searchtxtbox
             // 
-            this.searchtxtbox.Location = new System.Drawing.Point(211, 237);
+            this.searchtxtbox.Location = new System.Drawing.Point(18, 265);
             this.searchtxtbox.Name = "searchtxtbox";
             this.searchtxtbox.Size = new System.Drawing.Size(122, 20);
             this.searchtxtbox.TabIndex = 7;
@@ -296,6 +307,11 @@
             // 
             this.searchcmbBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.searchcmbBox.FormattingEnabled = true;
+            this.searchcmbBox.Items.AddRange(new object[] {
+            "Model",
+            "Year",
+            "Price"});
+            this.searchcmbBox.Location = new System.Drawing.Point(145, 265);
             this.searchcmbBox.Location = new System.Drawing.Point(114, 237);
             this.searchcmbBox.Margin = new System.Windows.Forms.Padding(2);
             this.searchcmbBox.Name = "searchcmbBox";
@@ -330,7 +346,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(39, 31);
+            this.pictureBox1.Location = new System.Drawing.Point(47, 59);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(294, 169);
             this.pictureBox1.TabIndex = 10;
@@ -340,13 +356,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(653, 682);
+            this.ClientSize = new System.Drawing.Size(653, 658);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.searchcmbBox);
             this.Controls.Add(this.searchtxtbox);
             this.Controls.Add(this.grbEdit);
-            this.Controls.Add(this.btnView);
             this.Controls.Add(this.grbList);
             this.Name = "Form1";
             this.Text = "Form1";
