@@ -283,5 +283,10 @@ namespace CarsOOPGruppProjekt
             pictureBox1.Image = carLogo;
 
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
