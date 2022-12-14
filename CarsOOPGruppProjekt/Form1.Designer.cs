@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.grbList = new System.Windows.Forms.GroupBox();
+            this.btnExit = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Manufacturer = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,7 +57,6 @@
             this.carsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.randomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnExit = new System.Windows.Forms.Button();
             this.grbList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grbEdit.SuspendLayout();
@@ -69,14 +69,23 @@
             this.grbList.Controls.Add(this.btnExit);
             this.grbList.Controls.Add(this.dataGridView1);
             this.grbList.Controls.Add(this.btnView);
-            this.grbList.Location = new System.Drawing.Point(18, 457);
-            this.grbList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grbList.Location = new System.Drawing.Point(12, 297);
             this.grbList.Name = "grbList";
-            this.grbList.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.grbList.Size = new System.Drawing.Size(944, 535);
+            this.grbList.Size = new System.Drawing.Size(629, 348);
             this.grbList.TabIndex = 0;
             this.grbList.TabStop = false;
             this.grbList.Text = "Car List";
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(566, 314);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(55, 25);
+            this.btnExit.TabIndex = 10;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // dataGridView1
             // 
@@ -92,13 +101,14 @@
             this.Year,
             this.Retailers,
             this.Price});
-            this.dataGridView1.Location = new System.Drawing.Point(9, 28);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 18);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(922, 449);
+            this.dataGridView1.Size = new System.Drawing.Size(615, 292);
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellContentClick);
@@ -148,10 +158,9 @@
             // 
             // btnView
             // 
-            this.btnView.Location = new System.Drawing.Point(819, 485);
-            this.btnView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnView.Location = new System.Drawing.Point(486, 315);
             this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(112, 35);
+            this.btnView.Size = new System.Drawing.Size(75, 23);
             this.btnView.TabIndex = 1;
             this.btnView.Text = "Refresh";
             this.btnView.UseVisualStyleBackColor = true;
@@ -159,10 +168,9 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(9, 343);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAdd.Location = new System.Drawing.Point(6, 223);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(112, 35);
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -170,10 +178,9 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(130, 343);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnEdit.Location = new System.Drawing.Point(87, 223);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(112, 35);
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 3;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -181,10 +188,9 @@
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(252, 343);
-            this.btnRemove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnRemove.Location = new System.Drawing.Point(168, 223);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(112, 35);
+            this.btnRemove.Size = new System.Drawing.Size(75, 23);
             this.btnRemove.TabIndex = 4;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
@@ -204,29 +210,16 @@
             this.grbEdit.Controls.Add(this.btnRemove);
             this.grbEdit.Controls.Add(this.btnAdd);
             this.grbEdit.Controls.Add(this.btnEdit);
-            this.grbEdit.Location = new System.Drawing.Point(586, 62);
-            this.grbEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grbEdit.Location = new System.Drawing.Point(391, 40);
             this.grbEdit.Name = "grbEdit";
-            this.grbEdit.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.grbEdit.Size = new System.Drawing.Size(375, 388);
+            this.grbEdit.Size = new System.Drawing.Size(250, 252);
             this.grbEdit.TabIndex = 5;
             this.grbEdit.TabStop = false;
             this.grbEdit.Text = "Add/Edit/Remove";
             // 
             // btnLogo
             // 
-            this.btnLogo.Location = new System.Drawing.Point(9, 29);
-            this.btnLogo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnLogo.Name = "btnLogo";
-            this.btnLogo.Size = new System.Drawing.Size(112, 35);
-            this.btnLogo.TabIndex = 9;
-            this.btnLogo.Text = "View Logo";
-            this.btnLogo.UseVisualStyleBackColor = true;
-            this.btnLogo.Click += new System.EventHandler(this.btnLogo_Click);
-            // 
-            // btnLogo
-            // 
-            this.btnLogo.Location = new System.Drawing.Point(7, 147);
+            this.btnLogo.Location = new System.Drawing.Point(6, 19);
             this.btnLogo.Name = "btnLogo";
             this.btnLogo.Size = new System.Drawing.Size(75, 23);
             this.btnLogo.TabIndex = 9;
@@ -237,10 +230,9 @@
             // btnApply
             // 
             this.btnApply.Enabled = false;
-            this.btnApply.Location = new System.Drawing.Point(129, 278);
-            this.btnApply.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnApply.Location = new System.Drawing.Point(86, 181);
             this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(112, 35);
+            this.btnApply.Size = new System.Drawing.Size(75, 23);
             this.btnApply.TabIndex = 9;
             this.btnApply.Text = "Apply";
             this.btnApply.UseVisualStyleBackColor = true;
@@ -249,10 +241,9 @@
             // btnCancel
             // 
             this.btnCancel.Enabled = false;
-            this.btnCancel.Location = new System.Drawing.Point(250, 278);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCancel.Location = new System.Drawing.Point(167, 181);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(112, 35);
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -261,62 +252,57 @@
             // txtId
             // 
             this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(294, 231);
+            this.txtId.Location = new System.Drawing.Point(196, 150);
+            this.txtId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(67, 26);
+            this.txtId.Size = new System.Drawing.Size(46, 20);
             this.txtId.TabIndex = 7;
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(183, 192);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPrice.Location = new System.Drawing.Point(122, 125);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(181, 26);
+            this.txtPrice.Size = new System.Drawing.Size(122, 20);
             this.txtPrice.TabIndex = 6;
             // 
             // txtYear
             // 
-            this.txtYear.Location = new System.Drawing.Point(183, 111);
-            this.txtYear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtYear.Location = new System.Drawing.Point(122, 72);
             this.txtYear.Name = "txtYear";
-            this.txtYear.Size = new System.Drawing.Size(180, 26);
+            this.txtYear.Size = new System.Drawing.Size(121, 20);
             this.txtYear.TabIndex = 6;
             // 
             // txtModel
             // 
-            this.txtModel.Location = new System.Drawing.Point(183, 71);
-            this.txtModel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtModel.Location = new System.Drawing.Point(122, 46);
             this.txtModel.Name = "txtModel";
-            this.txtModel.Size = new System.Drawing.Size(181, 26);
+            this.txtModel.Size = new System.Drawing.Size(122, 20);
             this.txtModel.TabIndex = 6;
             // 
             // cmbRetailers
             // 
             this.cmbRetailers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRetailers.FormattingEnabled = true;
-            this.cmbRetailers.Location = new System.Drawing.Point(183, 151);
-            this.cmbRetailers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmbRetailers.Location = new System.Drawing.Point(122, 98);
             this.cmbRetailers.Name = "cmbRetailers";
-            this.cmbRetailers.Size = new System.Drawing.Size(180, 28);
+            this.cmbRetailers.Size = new System.Drawing.Size(121, 21);
             this.cmbRetailers.TabIndex = 6;
             // 
             // cmbManufacurers
             // 
             this.cmbManufacurers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbManufacurers.FormattingEnabled = true;
-            this.cmbManufacurers.Location = new System.Drawing.Point(183, 29);
-            this.cmbManufacurers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmbManufacurers.Location = new System.Drawing.Point(122, 19);
             this.cmbManufacurers.Name = "cmbManufacurers";
-            this.cmbManufacurers.Size = new System.Drawing.Size(180, 28);
+            this.cmbManufacurers.Size = new System.Drawing.Size(121, 21);
             this.cmbManufacurers.TabIndex = 6;
             this.cmbManufacurers.SelectedIndexChanged += new System.EventHandler(this.cmbManufacurers_SelectedIndexChanged);
             // 
             // searchtxtbox
             // 
-            this.searchtxtbox.Location = new System.Drawing.Point(27, 408);
-            this.searchtxtbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.searchtxtbox.Location = new System.Drawing.Point(18, 265);
             this.searchtxtbox.Name = "searchtxtbox";
-            this.searchtxtbox.Size = new System.Drawing.Size(181, 26);
+            this.searchtxtbox.Size = new System.Drawing.Size(122, 20);
             this.searchtxtbox.TabIndex = 7;
             this.searchtxtbox.TextChanged += new System.EventHandler(this.searchtxtbox_TextChanged);
             // 
@@ -328,69 +314,58 @@
             "Model",
             "Year",
             "Price"});
-            this.searchcmbBox.Location = new System.Drawing.Point(218, 408);
+            this.searchcmbBox.Location = new System.Drawing.Point(145, 265);
+            this.searchcmbBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.searchcmbBox.Name = "searchcmbBox";
-            this.searchcmbBox.Size = new System.Drawing.Size(136, 28);
+            this.searchcmbBox.Size = new System.Drawing.Size(92, 21);
             this.searchcmbBox.TabIndex = 8;
             this.searchcmbBox.SelectedIndexChanged += new System.EventHandler(this.searchcmbBox_SelectedIndexChanged);
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.carsToolStripMenuItem,
             this.randomToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(980, 35);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(653, 24);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // carsToolStripMenuItem
             // 
             this.carsToolStripMenuItem.Name = "carsToolStripMenuItem";
-            this.carsToolStripMenuItem.Size = new System.Drawing.Size(62, 29);
+            this.carsToolStripMenuItem.Size = new System.Drawing.Size(42, 22);
             this.carsToolStripMenuItem.Text = "Cars";
             // 
             // randomToolStripMenuItem
             // 
             this.randomToolStripMenuItem.Name = "randomToolStripMenuItem";
-            this.randomToolStripMenuItem.Size = new System.Drawing.Size(96, 29);
+            this.randomToolStripMenuItem.Size = new System.Drawing.Size(64, 22);
             this.randomToolStripMenuItem.Text = "Random";
             this.randomToolStripMenuItem.Click += new System.EventHandler(this.randomToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(70, 91);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(47, 59);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(441, 260);
+            this.pictureBox1.Size = new System.Drawing.Size(294, 169);
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
-            // btnExit
-            // 
-            this.btnExit.Location = new System.Drawing.Point(726, 485);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(83, 38);
-            this.btnExit.TabIndex = 10;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(980, 1012);
+            this.ClientSize = new System.Drawing.Size(653, 658);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.searchcmbBox);
             this.Controls.Add(this.searchtxtbox);
             this.Controls.Add(this.grbEdit);
             this.Controls.Add(this.grbList);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

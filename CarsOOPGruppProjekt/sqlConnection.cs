@@ -264,13 +264,19 @@ namespace CarsOOPGruppProjekt
         //Tar bort en tillagd bil ifrån databasen
         public void DeleteCar(string sqlQuery)
         {
-            MySqlCommand cmd = new MySqlCommand(sqlQuery, _mysqlCon);
-            _mysqlCon.Open();
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(sqlQuery, _mysqlCon);
+                _mysqlCon.Open();
 
-            cmd.ExecuteReader();
+                cmd.ExecuteReader();
 
-            _mysqlCon.Close();
-
+                _mysqlCon.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Deleted car  failed");
+            }
         }
         
     }
