@@ -127,10 +127,7 @@ namespace CarsOOPGruppProjekt
                 dataRow.Cells[1].Value.ToString(),
                 dataRow.Cells[3].Value.ToString(),
                 dataRow.Cells[4].Value.ToString(),
-                dataRow.Cells[3].Value.ToString(),
-                dataRow.Cells[4].Value.ToString(),
                 Convert.ToInt32(dataRow.Cells[5].Value.ToString()));
-                dataRow.Selected = true;
                 return car;
             }
             else
