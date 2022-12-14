@@ -147,11 +147,18 @@ namespace CarsOOPGruppProjekt
         // Har en input query som försöker köras där man bara får tillbaka en int rowAffected hur många rader som påverkas
         public void updateSqlData(string query)
         {
-            _mysqlCon.Open();
-            MySqlCommand cmd = new MySqlCommand(query,_mysqlCon);
-            int rowAffected = cmd.ExecuteNonQuery();
+            try
+            {
+                _mysqlCon.Open();
+                MySqlCommand cmd = new MySqlCommand(query, _mysqlCon);
+                int rowAffected = cmd.ExecuteNonQuery();
 
-            _mysqlCon.Close();
+                _mysqlCon.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public List<Cars> searchUpdate(string keyWord, string comboString)
@@ -274,10 +281,11 @@ namespace CarsOOPGruppProjekt
 
                 _mysqlCon.Close();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Deleted car  failed");
             }
+            sqlClose();
         }
         
     }
