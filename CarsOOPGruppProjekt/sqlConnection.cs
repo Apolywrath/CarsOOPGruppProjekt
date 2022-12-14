@@ -277,6 +277,7 @@ namespace CarsOOPGruppProjekt
             {
                 MessageBox.Show("Deleted car  failed");
             }
+            sqlClose();
         }
         
     }
