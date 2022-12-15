@@ -42,6 +42,8 @@ namespace CarsOOPGruppProjekt
             }
             searchcmbBox.SelectedIndex= 0;
 
+            
+
             FillList();
             UpdateGUI();
         }
@@ -57,6 +59,9 @@ namespace CarsOOPGruppProjekt
             txtPrice.Text = "0";
             txtYear.Text = "0000";
             txtId.Text = "";
+
+            pictureBox1.Image = CarLogos.defaultLogo;
+
         }
 
         private void FillList() 
@@ -286,21 +291,9 @@ namespace CarsOOPGruppProjekt
 
         private void btnLogo_Click(object sender, EventArgs e)
         {
-            //Create a new WebClient object
-            WebClient client = new WebClient();
+            //Reloads the default logo when pressed.
 
-            //Download the image data as a byte array
-
-            byte[] imageData = client.DownloadData("https://www.carlogos.org/car-logos/toyota-logo.png");
-
-            //Create a MemoryStream from the image data
-            MemoryStream stream = new MemoryStream(imageData);
-
-            //Create an image object from the MemoryStream
-            Image carLogo = Image.FromStream(stream);
-
-            //Display the image on the pictureBox control
-            pictureBox1.Image = carLogo;
+            pictureBox1.Image = CarLogos.defaultLogo;
 
         }
 

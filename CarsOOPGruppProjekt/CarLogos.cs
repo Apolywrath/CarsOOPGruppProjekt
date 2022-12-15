@@ -11,7 +11,14 @@ namespace CarsOOPGruppProjekt
 {
     internal class CarLogos
     {
+
         static public WebClient client = new WebClient();
+
+        static public string defaultLink = "https://www.carlogos.org/img/carlogos.png";
+        static public Image defaultLogo = Image.FromStream(new MemoryStream(
+
+                 client.DownloadData(defaultLink)));
+
         static public string audiLink = "https://www.carlogos.org/car-logos/audi-logo.png";
         static public Image audiLogo = Image.FromStream(new MemoryStream(
 
