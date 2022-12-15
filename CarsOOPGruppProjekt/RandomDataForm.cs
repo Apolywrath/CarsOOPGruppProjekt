@@ -40,5 +40,10 @@ namespace CarsOOPGruppProjekt
             //Göm Formen igen
             this.Hide();
         }
+
+        private void carsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }
