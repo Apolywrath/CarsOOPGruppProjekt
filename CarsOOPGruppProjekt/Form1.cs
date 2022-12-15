@@ -301,5 +301,29 @@ namespace CarsOOPGruppProjekt
         {
             this.Close();
         }
+
+
+        private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (dataGridView1.SelectedCells.Count > 0) dataGridView1.SelectedCells[0].OwningRow.Selected = true;
+
+            
+            string car = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            switch (car)
+            {
+                case "Audi":
+                    pictureBox1.Image = CarLogos.audiLogo; break;
+                case "Ford":
+                    pictureBox1.Image = CarLogos.fordLogo; break;
+                case "Renault":
+                    pictureBox1.Image = CarLogos.renaultLogo; break;
+                case "Saab":
+                    pictureBox1.Image = CarLogos.saabLogo; break;
+                case "Suzuki":
+                    pictureBox1.Image = CarLogos.suzukiLogo; break;
+                case "Volvo":
+                    pictureBox1.Image = CarLogos.volvoLogo; break;
+            }
+        }
     }
 }
