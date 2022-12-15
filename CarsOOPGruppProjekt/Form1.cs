@@ -206,6 +206,14 @@ namespace CarsOOPGruppProjekt
                     pictureBox1.Image = CarLogos.audiLogo;break;
                 case "Ford":
                     pictureBox1.Image = CarLogos.fordLogo;break;
+                case "Renault":
+                    pictureBox1.Image = CarLogos.renaultLogo;break;
+                case "Saab":
+                    pictureBox1.Image = CarLogos.saabLogo;break;
+                case "Suzuki":
+                    pictureBox1.Image = CarLogos.suzukiLogo;break;
+                case "Volvo":
+                    pictureBox1.Image = CarLogos.volvoLogo;break;
             }
 
             //Autofill: Hämtar data från datagrid och representerar värden till text-&comboboxes
