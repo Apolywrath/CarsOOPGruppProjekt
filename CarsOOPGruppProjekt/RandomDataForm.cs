@@ -41,6 +41,7 @@ namespace CarsOOPGruppProjekt
             this.Hide();
         }
 
+        // Gömmer RandomGenerater Form
         private void carsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
