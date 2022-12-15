@@ -79,7 +79,7 @@
             // btnExit
             // 
             this.btnExit.Location = new System.Drawing.Point(566, 314);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(55, 25);
             this.btnExit.TabIndex = 10;
@@ -102,7 +102,7 @@
             this.Retailers,
             this.Price});
             this.dataGridView1.Location = new System.Drawing.Point(6, 18);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -253,7 +253,7 @@
             // 
             this.txtId.Enabled = false;
             this.txtId.Location = new System.Drawing.Point(196, 150);
-            this.txtId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtId.Margin = new System.Windows.Forms.Padding(2);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(46, 20);
             this.txtId.TabIndex = 7;
@@ -315,7 +315,7 @@
             "Year",
             "Price"});
             this.searchcmbBox.Location = new System.Drawing.Point(145, 265);
-            this.searchcmbBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchcmbBox.Margin = new System.Windows.Forms.Padding(2);
             this.searchcmbBox.Name = "searchcmbBox";
             this.searchcmbBox.Size = new System.Drawing.Size(92, 21);
             this.searchcmbBox.TabIndex = 8;
@@ -352,6 +352,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(47, 59);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(294, 169);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
