@@ -55,7 +55,7 @@ namespace CarsOOPGruppProjekt
             //Sätt defaultvärden för text
             txtModel.Text = "model";
             txtPrice.Text = "0";
-            txtYear.Text = "xxxx";
+            txtYear.Text = "0000";
             txtId.Text = "";
         }
 
