@@ -42,6 +42,8 @@ namespace CarsOOPGruppProjekt
             }
             searchcmbBox.SelectedIndex= 0;
 
+            
+
             FillList();
             UpdateGUI();
         }
@@ -57,6 +59,9 @@ namespace CarsOOPGruppProjekt
             txtPrice.Text = "0";
             txtYear.Text = "0000";
             txtId.Text = "";
+
+            pictureBox1.Image = CarLogos.defaultLogo;
+
         }
 
         private void FillList() 
@@ -291,7 +296,7 @@ namespace CarsOOPGruppProjekt
 
             //Download the image data as a byte array
 
-            byte[] imageData = client.DownloadData("https://www.carlogos.org/car-logos/toyota-logo.png");
+            byte[] imageData = client.DownloadData("https://www.carlogos.org/img/carlogos.png");
 
             //Create a MemoryStream from the image data
             MemoryStream stream = new MemoryStream(imageData);

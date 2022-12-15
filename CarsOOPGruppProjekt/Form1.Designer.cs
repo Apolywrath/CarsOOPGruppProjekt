@@ -219,11 +219,12 @@
             // 
             // btnLogo
             // 
+            this.btnLogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogo.Location = new System.Drawing.Point(6, 19);
             this.btnLogo.Name = "btnLogo";
-            this.btnLogo.Size = new System.Drawing.Size(75, 23);
+            this.btnLogo.Size = new System.Drawing.Size(89, 58);
             this.btnLogo.TabIndex = 9;
-            this.btnLogo.Text = "View Logo";
+            this.btnLogo.Text = "View default logo";
             this.btnLogo.UseVisualStyleBackColor = true;
             this.btnLogo.Click += new System.EventHandler(this.btnLogo_Click);
             // 
@@ -349,6 +350,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.pictureBox1.Location = new System.Drawing.Point(47, 59);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(294, 169);
