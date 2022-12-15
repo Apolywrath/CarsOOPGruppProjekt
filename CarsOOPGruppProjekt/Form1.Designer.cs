@@ -42,6 +42,7 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.grbEdit = new System.Windows.Forms.GroupBox();
+            this.btnLogo = new System.Windows.Forms.Button();
             this.btnApply = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.txtId = new System.Windows.Forms.TextBox();
@@ -197,6 +198,7 @@
             // 
             // grbEdit
             // 
+            this.grbEdit.Controls.Add(this.btnLogo);
             this.grbEdit.Controls.Add(this.btnApply);
             this.grbEdit.Controls.Add(this.btnCancel);
             this.grbEdit.Controls.Add(this.txtId);
@@ -214,6 +216,16 @@
             this.grbEdit.TabIndex = 5;
             this.grbEdit.TabStop = false;
             this.grbEdit.Text = "Add/Edit/Remove";
+            // 
+            // btnLogo
+            // 
+            this.btnLogo.Location = new System.Drawing.Point(6, 19);
+            this.btnLogo.Name = "btnLogo";
+            this.btnLogo.Size = new System.Drawing.Size(75, 23);
+            this.btnLogo.TabIndex = 9;
+            this.btnLogo.Text = "View Logo";
+            this.btnLogo.UseVisualStyleBackColor = true;
+            this.btnLogo.Click += new System.EventHandler(this.btnLogo_Click);
             // 
             // btnApply
             // 
@@ -399,6 +411,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem carsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem randomToolStripMenuItem;
+        private System.Windows.Forms.Button btnLogo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnExit;
     }
